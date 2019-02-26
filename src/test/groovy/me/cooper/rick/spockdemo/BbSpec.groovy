@@ -3,7 +3,7 @@ package me.cooper.rick.spockdemo
 import spock.lang.Specification
 
 
-class BSpec extends Specification {
+class BbSpec extends Specification {
 
     def calc = new CrapCalc()
 
@@ -17,8 +17,13 @@ class BSpec extends Specification {
         answer = expectedAnswer
 
         where:
-        x << [1, 2, 3]
+        [x, y] << [1, 2, 3]
         y << [1, 2, 3]
         expectedAnswer << [2, 4, 6]
     }
+
+    def giveMeAlistOfNumbers() {
+        return [1, 2, 3]
+    }
+
 }

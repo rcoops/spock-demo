@@ -14,16 +14,4 @@ public class CrapCalc {
   public int addAll(final int... all) {
     return stream(all).sum();
   }
-
-  public int subtract(final int one, final int two) {
-    return one - two;
-  }
-
-  public int multiply(final int one, final int two) {
-    return one * two;
-  }
-
-  public double divide(final int one, final int two) {
-    return one / (double) two;
-  }
 }

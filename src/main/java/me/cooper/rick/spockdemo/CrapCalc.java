@@ -2,9 +2,9 @@ package me.cooper.rick.spockdemo;
 
 import static java.util.Arrays.stream;
 
-public class CrapCalc {
+public final class CrapCalc {
 
-  private final String youCantSeeMe = "ha!";
+  private final String definitelyPrivateField = "ha! you'll never see me cos: encapsulation right?";
 
   public CrapCalc() {
   }

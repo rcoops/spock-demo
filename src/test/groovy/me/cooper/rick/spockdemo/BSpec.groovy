@@ -15,16 +15,10 @@ and in my humble opinion this sort of thing should be kept to a minimum unless c
         true
     }
 
-    def "test that Groovy is mental"() {
-        given: "We've made up some random tostring method"
-        CrapCalc.metaClass.toString = {
-            return "I'm a crap calc"
-        }
 
-        when: "calling a method that doesn't exist in real life"
-        def calcString = calc.toString()
-
-        then: 'Groovy is mental'
+    def 'well duh'() {
+        expect:
+        !false
     }
 
 }

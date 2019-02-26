@@ -7,11 +7,14 @@ class DemoSpec extends Specification {
 
     def calc = new CrapCalc()
 
-    def "a really long test name that provides an adequate description in English"() {
-        when:
-        def x = calc.add(1, 2)
-        then:
-        x == 3
+    def "I want to make sure that adding 1 to 2 results in 3 and this test will do that!"() {
+        given: "nothing... given nothing"
+
+        when: "adding the two numbers"
+        def answer = calc.add(1, 2)
+
+        then: "the numbers are magically added!!"
+        answer == 3
     }
 
 }

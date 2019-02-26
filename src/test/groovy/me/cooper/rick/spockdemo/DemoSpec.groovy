@@ -10,10 +10,10 @@ class DemoSpec extends Specification {
     def "I actually want to test add a bunch of times as I can't trust '+'"() {
         given: "nothing... given nothing"
 
-        when: "adding the two numbers"
+        when: "adding 1 and 2 together"
         def answer = calc.add(x, y)
 
-        then: "the numbers are magically added!!"
+        then: "the numbers are magically added to get 3!!"
         answer == expectedAnswer
 
         where:
@@ -25,7 +25,7 @@ class DemoSpec extends Specification {
     def "Let's test the really really advanced addall logic now"() {
         given: "nothing... given nothing"
 
-        when: "adding the two numbers"
+        when: "adding all the numbers"
         def answer = calc.addAll(x, y, z, a, b, c, d, e, f, g)
 
         then: "the numbers are magically added!!"

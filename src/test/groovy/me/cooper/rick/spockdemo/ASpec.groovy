@@ -1,7 +1,7 @@
 package me.cooper.rick.spockdemo
 
-import spock.lang.Specification
 
+import spock.lang.Specification
 
 class ASpec extends Specification {
 
@@ -16,8 +16,8 @@ class ASpec extends Specification {
         then: 'the numbers are magically added to get 3!!'
         answer == 3
     }
-
-    def 'this test is really just to show you the output of a failed test'() {
+    // Not double quotes - GString
+    def "this test has no idea what it's talking about and so will fail"() {
         given: 'nothing... given nothing'
 
         when: 'adding the 1 and 2'

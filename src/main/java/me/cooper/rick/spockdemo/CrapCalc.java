@@ -4,6 +4,8 @@ import static java.util.Arrays.stream;
 
 public class CrapCalc {
 
+  private final String youCantSeeMe = "ha!";
+
   public CrapCalc() {
   }
 

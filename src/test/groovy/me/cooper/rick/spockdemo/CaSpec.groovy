@@ -3,7 +3,7 @@ package me.cooper.rick.spockdemo
 import spock.lang.Specification
 
 
-class BaSpec extends Specification {
+class CaSpec extends Specification {
 
     def calc = new CrapCalc()
 
@@ -14,7 +14,7 @@ class BaSpec extends Specification {
         def answer = calc.add(x, y)
 
         then:
-        answer = expectedAnswer
+        answer == expectedAnswer
 
         where:
         x << [1, 2, 3]

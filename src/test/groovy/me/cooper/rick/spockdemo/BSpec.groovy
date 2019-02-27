@@ -21,4 +21,10 @@ and in my humble opinion this sort of thing should be kept to a minimum unless c
         !false
     }
 
+
+    def 'not nothing is true!'() {
+        expect:
+        !null
+    }
+
 }

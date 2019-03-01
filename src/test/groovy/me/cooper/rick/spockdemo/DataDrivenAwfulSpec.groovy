@@ -15,7 +15,7 @@ class DataDrivenAwfulSpec extends Specification {
         answer == expectedAnswer
 
         where: 'there are multiple complicated combinations of x and y'
-        x << [1, 3, 3]
+        x << [1, 2, 3]
         y << [1, 2, 3]
         expectedAnswer << [2, 4, 6]
     }

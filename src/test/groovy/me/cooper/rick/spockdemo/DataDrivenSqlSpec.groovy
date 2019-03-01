@@ -5,11 +5,9 @@ import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
 
-
 class DataDrivenSqlSpec extends Specification {
 
-    @Shared
-    def sql = Sql.newInstance "jdbc:h2:mem:test", "org.h2.Driver"
+    @Shared def sql = Sql.newInstance "jdbc:h2:mem:test", "org.h2.Driver"
 
     def setupSpec() {
         sql.execute 'create table test(name varchar(50) primary key, team varchar(50), job_title varchar(100))'
@@ -22,7 +20,7 @@ class DataDrivenSqlSpec extends Specification {
     }
 
     @Unroll
-    def "rick c is awesome, daniel g is the worst"() {
+    def '#expectedName is #expectedJobTitle'() {
         expect:
         name == expectedName
         jobTitle == expectedJobTitle

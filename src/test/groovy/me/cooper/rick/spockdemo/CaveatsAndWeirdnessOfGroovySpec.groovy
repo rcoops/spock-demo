@@ -1,5 +1,6 @@
 package me.cooper.rick.spockdemo
 
+import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Title
 
@@ -63,6 +64,7 @@ and in my humble opinion this sort of thing should be kept to a minimum unless c
         }
     }
 
+    @Ignore("Un-ignore me to fail")
     def "deal with brackets!"() {
         expect: 'true AND false??'
         if (true) {

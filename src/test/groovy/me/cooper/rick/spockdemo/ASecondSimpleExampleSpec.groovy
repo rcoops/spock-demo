@@ -1,6 +1,6 @@
 package me.cooper.rick.spockdemo
 
-
+import spock.lang.Ignore
 import spock.lang.Specification
 
 class ASecondSimpleExampleSpec extends Specification {
@@ -13,6 +13,7 @@ class ASecondSimpleExampleSpec extends Specification {
     }
 
     // Not double quotes - GString
+    @Ignore("when you want to fail")
     def "this test has no idea what it's talking about and so will fail"() {
         given: 'nothing... given nothing'
 

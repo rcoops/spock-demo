@@ -1,14 +1,13 @@
 package me.cooper.rick.spockdemo
 
-import org.junit.Ignore
+import spock.lang.Ignore
 import spock.lang.Specification
 
 class AThirdSimpleExampleThatFailsSpec extends Specification {
 
     def calc = new CrapCalc()
 
-    @Ignore
-    // TODO remove me
+    @Ignore("when you want to fail")
     def "this test has no idea what it's talking about and so will fail"() {
         given: 'nothing... given nothing'
 

@@ -14,14 +14,14 @@ class ExceptionSpec extends Specification {
     }
 
     def "Exception Inspection"() {
-        given: 'an rebel WITH a cause'
+        given: 'a rebel WITH a cause'
         def f = new IllegalArgumentException()
         def e = new Exception("oh noes!", f)
 
         when: 'it gets thrown'
         throw e
 
-        then: 'EXPLOSION!'
+        then: 'EXPLOSION! with detail'
         def thrown = thrown(Exception)
         thrown.cause == f
         thrown.message == "oh noes!"

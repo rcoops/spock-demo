@@ -8,6 +8,7 @@ class DataDrivenBetterSpec extends Specification {
 
     def calc = new CrapCalc()
 
+
     def "Let's test the really really advanced addall logic now"() {
         given: "nothing... given nothing"
 
@@ -45,7 +46,6 @@ class DataDrivenBetterSpec extends Specification {
         2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 || 20
         3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 || 30
     }
-
 
     @Unroll
     def 'this is even better! #x + #y + #a + #b + #c + #c + #d + #e + #f + #g = #expectedAnswer'() {

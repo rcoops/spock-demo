@@ -21,7 +21,7 @@ class DataDrivenAwfulSpec extends Specification {
     }
 
 
-    def 'I care about minimum lines but not readability'() {
+    def 'I care more about minimum lines than readability'() {
         when: 'adding x and y'
         def answer = calc.add(x, y)
 

@@ -2,7 +2,7 @@ package me.cooper.rick.spockdemo;
 
 import static java.util.Arrays.stream;
 
-public final class CrapCalc {
+public class CrapCalc {
 
   private final String definitelyPrivateField = "ha! you'll never see me cos: encapsulation right?";
 
@@ -14,6 +14,6 @@ public final class CrapCalc {
   }
 
   public int addAll(final int... all) {
-    return stream(all).sum();
+    return stream(all).reduce(this::add).orElseThrow(() -> new NumberFormatException("Something's up"));
   }
 }

@@ -5,7 +5,7 @@ import spock.lang.Title
 
 
 @Title("Groovy is too gangsta for you")
-class CGroovyWeirdnessAndCaveatsSpec extends Specification {
+class CaveatsAndWeirdnessOfGroovySpec extends Specification {
 
     def calc = new CrapCalc()
 
@@ -24,7 +24,7 @@ and in my humble opinion this sort of thing should be kept to a minimum unless c
         calc.definitelyPrivateField == "ha! you'll never see me cos: encapsulation right?"
     }
 
-    def "Groovy doesn't care how you define yourself"() {
+    def "Groovy doesn't care what you're made of"() {
         given: "We've made up some random tostring method"
         CrapCalc.metaClass.toString = {
             return "I'm a crap calc"
@@ -48,13 +48,28 @@ and in my humble opinion this sort of thing should be kept to a minimum unless c
         new NullObjectWrapperWrapper().nullField?.interestingFieldAsLongAsMyParentIsNotNull == null
     }
 
-    def "beware blocks!"() {
+    def 'Groovy has no class'() {
         expect:
+        ''.class == String
+    }
+
+    def 'beware brackets!'() {
+        expect: 'true AND false??'
         if (true) {
             false
         }
         if (true) {
             true
+        }
+    }
+
+    def "deal with brackets!"() {
+        expect: 'true AND false??'
+        if (true) {
+            assert false
+        }
+        if (true) {
+            assert true
         }
     }
 

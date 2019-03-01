@@ -3,7 +3,7 @@ package me.cooper.rick.spockdemo
 import spock.lang.Specification
 
 
-class BGroovyConditionsSpec extends Specification {
+class ButAreConditionsEnoughSpec extends Specification {
 
     def 'well duh'() {
         expect:
@@ -29,5 +29,6 @@ class BGroovyConditionsSpec extends Specification {
         expect:
         !""
     }
+
 
 }

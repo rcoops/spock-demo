@@ -3,11 +3,11 @@ package me.cooper.rick.spockdemo
 import spock.lang.Ignore
 import spock.lang.Specification
 
-class AThirdSimpleExampleThatFailsSpec extends Specification {
+@Ignore("unless you want to fail")
+class ASecondSimpleExampleThatFailsSpec extends Specification {
 
     def calc = new CrapCalc()
 
-    @Ignore("when you want to fail")
     def "this test has no idea what it's talking about and so will fail"() {
         given: 'nothing... given nothing'
 
@@ -18,5 +18,13 @@ class AThirdSimpleExampleThatFailsSpec extends Specification {
         answer == 4
     }
 
+    def 'checking string equality'() {
+        given: 'some almost identical strings'
+        def one = 'I want to compare this string to another string'
+        def two = 'I want to compare this string too another string'
+
+        expect: 'they equal! Or do they...?'
+        one == two
+    }
 
 }

@@ -20,7 +20,7 @@ class ButAreConditionsEnoughSpec extends Specification {
         !0
     }
 
-    def 'empty list is false'() {
+    def 'empty collection is false'() {
         expect:
         ![]
     }

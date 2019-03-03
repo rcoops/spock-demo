@@ -5,12 +5,22 @@ import spock.lang.Specification
 
 class ExceptionSpec extends Specification {
 
+    def calc = new CrapCalc()
+
     def "null throws null pointer - who knew!"() {
         when: 'accessing a null field'
         new NullObjectWrapperWrapper().nullField.interestingFieldAsLongAsMyParentIsNotNull
 
         then: 'EXPLOSION!'
         thrown(NullPointerException)
+    }
+
+    def "no illegal args"() {
+        when:
+        calc.add(1, 2)
+
+        then: 'EXPLOSION!'
+        notThrown(IllegalArgumentException)
     }
 
     def "Exception Inspection"() {
@@ -22,20 +32,10 @@ class ExceptionSpec extends Specification {
         throw e
 
         then: 'EXPLOSION! with detail'
+
         def thrown = thrown(Exception)
+        // NullPointerException thrown = thrown()
         thrown.cause == f
         thrown.message == "oh noes!"
-    }
-
-
-    def "HashMap accepts null key"() {
-        given:
-        def map = new HashMap()
-
-        when:
-        map.put(null, "elem")
-
-        then:
-        notThrown(NullPointerException)
     }
 }

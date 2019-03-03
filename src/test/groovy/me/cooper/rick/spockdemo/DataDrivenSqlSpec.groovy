@@ -31,4 +31,18 @@ class DataDrivenSqlSpec extends Specification {
         expectedName << ['Rick C', 'Daniel G']
         expectedJobTitle << ['Awesome', 'The Worst']
     }
+
+    @Unroll
+    def '#expectedName is #expectedJobTitle 2'() {
+        expect:
+        name == expectedName
+        jobTitle == expectedJobTitle
+
+        where:
+        row << sql.rows('select * from test')
+        name = row.name
+        jobTitle = row.job_title
+        expectedName << ['Rick C', 'Daniel G']
+        expectedJobTitle << ['Awesome', 'The Worst']
+    }
 }

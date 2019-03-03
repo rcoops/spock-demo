@@ -34,11 +34,11 @@ and in my humble opinion this sort of thing should be kept to a minimum unless c
 
     def "Groovy Takes what it wants - no returns"() {
         expect: 'MAGIC'
-        justEvaluateSomeStuff()
+        gimme() == "some stuff"
     }
 
-    def justEvaluateSomeStuff() {
-        1 == 1 && true && "foo".contains("o")
+    def gimme() {
+        "some stuff"
     }
 
     def "Groovy doesn't care whether you even exist"() {
@@ -46,9 +46,26 @@ and in my humble opinion this sort of thing should be kept to a minimum unless c
         new NullObjectWrapperWrapper().nullField?.interestingFieldAsLongAsMyParentIsNotNull == null
     }
 
-    def 'Groovy has no class'() {
+    def 'Groovy aint got no class'() {
         expect:
         ''.class == String
+    }
+
+    def "Groovy doesn't care if you take exception!"() {
+        when:
+        throwCheckedExceptionWithoutChecking()
+        then:
+        thrown(IOException)
+    }
+
+    def throwCheckedExceptionWithoutChecking() {
+        throw new IOException()
+    }
+
+    def "Groovy gets without getting"() {
+        def x = new Encapsulated()
+        expect:
+        x.myField == 2
     }
 
     def 'beware brackets!'() {

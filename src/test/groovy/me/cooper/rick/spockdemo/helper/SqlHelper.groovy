@@ -10,15 +10,15 @@ class SqlHelper {
         sql.execute 'create table test(name varchar(50) primary key, team varchar(50), job_title varchar(100))'
         sql.executeInsert "insert into test(name, team, job_title) values ('Rick C', 'Power Arrangers', 'Awesome')"
         sql.executeInsert "insert into test(name, team, job_title) values ('Daniel G', 'UpScience', 'The Worst')"
+        void
     }
 
     static def clearTestData() {
-        sql.execute 'create table test(name varchar(50) primary key, team varchar(50), job_title varchar(100))'
-        sql.executeInsert "insert into test(name, team, job_title) values ('Rick C', 'Power Arrangers', 'Awesome')"
-        sql.executeInsert "insert into test(name, team, job_title) values ('Daniel G', 'UpScience', 'The Worst')"
+        sql.execute 'drop table test'
+        void
     }
 
     static def getTestData() {
-        sql.rows('select * from test')
+        sql.rows 'select * from test'
     }
 }

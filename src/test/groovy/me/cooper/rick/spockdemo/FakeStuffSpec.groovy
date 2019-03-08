@@ -28,16 +28,17 @@ class FakeStuffSpec extends Specification {
     }
 
     def "does things 2"() {
-        def mockyMock2 = Stub(ClassToMock) {
+        def mockyMock = Mock(ClassToMock) {
             doStuff:
             {
                 print "I'm replacing what happens in the class ha"
             }
         }
-        def mockyMockWrapper2 = new ClassToMockWrapper(mockyMock2)
+        def mockyMockWrapper = new ClassToMockWrapper(mockyMock)
         when:
-        mockyMockWrapper2.doStuffWithMock()
+        mockyMockWrapper.doStuffWithMock()
         then:
-        1 * mockyMock2.doStuff()
+        1 * mockyMock.doStuff()
+        0 * _
     }
 }

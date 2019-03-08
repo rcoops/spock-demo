@@ -6,7 +6,6 @@ class DataDrivenAwfulSpec extends Specification {
 
     def calc = new CrapCalc()
 
-
     def "I actually think I want to test more than just two numbers as I don't trust '+'"() {
         when: 'adding x and y'
         def answer = calc.add(x, y)

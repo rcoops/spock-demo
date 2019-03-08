@@ -9,13 +9,8 @@ class ASecondSimpleExampleThatFailsSpec extends Specification {
     def calc = new CrapCalc()
 
     def "this test has no idea what it's talking about and so will fail"() {
-        given: 'nothing... given nothing'
-
-        when: 'adding the 1 and 2'
-        def answer = calc.add(1, 2)
-
-        then: 'the numbers are magically added to get ...4?!!'
-        answer == 4
+        expect: 'adding 1 and 2 makes ...4?!!'
+        calc.add(1, 2) == 4
     }
 
     def 'checking string equality'() {

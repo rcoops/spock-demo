@@ -2,14 +2,13 @@ package me.cooper.rick.spockdemo
 
 import spock.lang.Specification
 
-
 class ExceptionSpec extends Specification {
 
     def calc = new CrapCalc()
 
     def "null throws null pointer - who knew!"() {
         when: 'accessing a null field'
-        new NullObjectWrapperWrapper().nullField.interestingFieldAsLongAsMyParentIsNotNull
+        new Encapsulated().nullField.interestingFieldAsLongAsMyParentIsNotNull
 
         then: 'EXPLOSION!'
         thrown(NullPointerException)
@@ -32,7 +31,6 @@ class ExceptionSpec extends Specification {
         throw e
 
         then: 'EXPLOSION! with detail'
-
         def thrown = thrown(Exception)
         // NullPointerException thrown = thrown()
         thrown.cause == f

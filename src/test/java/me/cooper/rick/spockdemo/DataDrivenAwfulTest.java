@@ -1,46 +1,48 @@
 package me.cooper.rick.spockdemo;
 
-import static java.lang.String.format;
 import static java.util.Arrays.asList;
-import static java.util.Arrays.stream;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
-public class DataDriverParameterisedTest {
+public class DataDrivenAwfulTest {
 
   @Parameterized.Parameters
   public static Collection<Object[]> params() {
       return asList(
           new Object[][]{
-              {new int[]{1,1,1,1,1,1,1,1,1,1}, 10},
-              {new int[]{2,2,2,2,2,2,2,2,2,2}, 20},
-              {new int[]{3,3,3,3,3,3,3,3,3,3}, 30}
+              {1, 1, 2},
+              {2, 2, 4},
+              {3, 3, 6}
           }
       );
   }
 
   private final CrapCalc crapCalc = new CrapCalc();
 
-  private int[] addAllInputs;
+  private int firstInput;
+  private int secondInput;
   private int expectedOutput;
 
-  public DataDriverParameterisedTest(final int[] addAllInputs, final int expectedOutput) {
-    this.addAllInputs = addAllInputs;
+  public DataDrivenAwfulTest(final int firstInput, int secondInput, final int expectedOutput) {
+    this.firstInput = firstInput;
+    this.secondInput = secondInput;
     this.expectedOutput = expectedOutput;
   }
 
   @Test
   public void addAll_givenArrayOfInputs_addsThemAllUp() {
-    assertEquals(crapCalc.addAll(addAllInputs), expectedOutput);
+    // When: adding x and y
+    int result = crapCalc.add(firstInput, secondInput);
+
+    // Then: the answer should be as expected
+    assertEquals(result, expectedOutput);
   }
 
 }

@@ -10,26 +10,32 @@ class CaveatsAndWeirdnessOfGroovySpec extends Specification {
 
     def calc = new CrapCalc()
 
-    def """This test name is so long that it actually needs multiple lines
-to describe what's going on. In fact come to think of it this name is probably going on for a bit longer than needed
-and in my humble opinion this sort of thing should be kept to a minimum unless completely necessary. """() {
+    def """This test name is so long that it actually needs multiple lines to describe what's going on. In fact come to
+think of it this name is probably going on for a bit longer than needed and in my humble opinion this sort of thing
+should be kept to a minimum unless completely necessary. """() {
         expect:
         true
     }
 
     def "Groovy doesn't care about your privacy"() {
+        expect: "it takes 'private' as a suggestion rather than a rule"
+        Encapsulated.definitelyPrivateField == "ha! you'll never see me cos: encapsulation right?"
+    }
+
+    def "Groovy doesn't 'get' it... or does it?"() {
+        def x = new Encapsulated()
         expect:
-        calc.definitelyPrivateField == "ha! you'll never see me cos: encapsulation right?"
+        x.myField == 2
     }
 
     def "Groovy doesn't care what you're made of"() {
-        given: "We've made up some random tostring method"
-        CrapCalc.metaClass.toString = {
+        given: "We've made up some random toString method"
+        Encapsulated.metaClass.toString = {
             return "I'm a crap calc"
         }
 
         expect: 'Groovy is ridiculous'
-        calc.toString() == "I'm a crap calc"
+        new Encapsulated().toString() == "I'm a crap calc"
     }
 
     def "Groovy Takes what it wants - no returns"() {
@@ -41,31 +47,25 @@ and in my humble opinion this sort of thing should be kept to a minimum unless c
         "some stuff"
     }
 
-    def "Groovy doesn't care whether you even exist"() {
-        expect: 'MAGIC'
-        new NullObjectWrapperWrapper().nullField?.interestingFieldAsLongAsMyParentIsNotNull == null
+    def "Groovy doesn't even care if you exist"() {
+        expect: 'in normal circumstances, a null pointer exception'
+        new Encapsulated().nullField?.interestingFieldAsLongAsMyParentIsNotNull == null
     }
 
-    def 'Groovy aint got no class'() {
+    def "Groovy ain't got no class"() {
         expect:
         ''.class == String
     }
 
     def "Groovy doesn't care if you take exception!"() {
         when:
-        throwCheckedExceptionWithoutChecking()
+        throwCheckedExceptionWithoutActuallyChecking()
         then:
         thrown(IOException)
     }
 
-    def throwCheckedExceptionWithoutChecking() {
+    def throwCheckedExceptionWithoutActuallyChecking() {
         throw new IOException()
-    }
-
-    def "Groovy gets without getting"() {
-        def x = new Encapsulated()
-        expect:
-        x.myField == 2
     }
 
     def 'beware brackets!'() {

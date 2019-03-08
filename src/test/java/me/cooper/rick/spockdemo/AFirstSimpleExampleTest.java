@@ -20,4 +20,11 @@ public class AFirstSimpleExampleTest {
     assertThat(answer).isEqualTo(3);
   }
 
+  @Test
+  public void add_givenOneAndTwo_expectThree() {
+
+    // Expect: 1 and 2 added together makes...3!
+    assertThat(calc.add(1, 2)).isEqualTo(3);
+  }
+
 }

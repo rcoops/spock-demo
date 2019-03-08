@@ -8,8 +8,7 @@ class DataDrivenBetterSpec extends Specification {
 
     def calc = new CrapCalc()
 
-
-    def "Let's test the really really advanced addall logic now"() {
+    def "Let's test the really really advanced addAll logic now"() {
         given: "nothing... given nothing"
 
         when: "adding all the numbers"
@@ -24,7 +23,7 @@ class DataDrivenBetterSpec extends Specification {
         z << [1, 2, 3]
         a << [1, 2, 3]
         b << [1, 2, 3]
-        c << [1, 22, 3]
+        c << [1, 2, 3]
         d << [1, 2, 3]
         e << [1, 2, 3]
         f << [1, 2, 3]
@@ -34,6 +33,21 @@ class DataDrivenBetterSpec extends Specification {
 
     // fail this test to lead on to Unroll
     def 'this is better'() {
+        when: 'adding x and y'
+        def answer = calc.addAll(x, y, z, a, b, c, d, e, f, g)
+
+        then: 'the answer should be as expected'
+        answer == expectedAnswer
+
+        where: 'there are multiple complicated combinations of x and y'
+        x | y | z | a | b | c | d | e | f | g || expectedAnswer
+        1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 || 10
+        2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 || 20
+        3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 || 30
+    }
+
+    // fail this test to lead on to Unroll
+    def 'this is DEFINITELY better for lots of test cases'() {
         when: 'adding x and y'
         def answer = calc.addAll(x, y, z, a, b, c, d, e, f, g)
 

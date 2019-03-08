@@ -9,11 +9,14 @@ class AFirstSimpleExampleSpec extends Specification {
     def 'I want to make sure that adding 1 to 2 results in 3 and this test will do that (and very well thank you)!'() {
         given: 'nothing... given nothing'
 
-        when: 'adding the 1 and 2'
+        when: 'adding the 1 and 2 together'
         def answer = calc.add(1, 2)
 
         then: 'the numbers are magically added to get 3!!'
         answer == 3
+
+        where:
+        true
     }
 
     def 'I think I can make this test simpler!'() {

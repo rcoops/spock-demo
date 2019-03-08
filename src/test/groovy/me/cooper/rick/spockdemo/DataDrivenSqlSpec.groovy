@@ -1,6 +1,5 @@
 package me.cooper.rick.spockdemo
 
-
 import me.cooper.rick.spockdemo.helper.SqlHelper
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -9,8 +8,6 @@ import static me.cooper.rick.spockdemo.helper.SqlHelper.clearTestData
 import static me.cooper.rick.spockdemo.helper.SqlHelper.populateTestData
 
 class DataDrivenSqlSpec extends Specification {
-
-//    @Shared def sql = Sql.newInstance "jdbc:h2:mem:test", "org.h2.Driver"
 
     def setupSpec() {
         populateTestData()

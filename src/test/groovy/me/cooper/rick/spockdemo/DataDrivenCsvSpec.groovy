@@ -12,7 +12,7 @@ class DataDrivenCsvSpec extends Specification {
     @Unroll
     def 'csv works as a datasource #x + #y = #expectedAnswer'() {
         expect: 'the answer should be as expected'
-        calc.add(x, y) == expectedAnswer
+        calc.addAll(x, y, z, a, b, c, d, e, f, g) == expectedAnswer
 
         where: 'there are multiple complicated combinations of x and y'
         [x, y, z, a, b, c, d, e, f, g, expectedAnswer] << CsvHelper.testData

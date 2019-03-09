@@ -17,10 +17,12 @@ import org.junit.runners.Parameterized;
 @RunWith(Parameterized.class)
 public class DataDrivenCsvTest {
 
-  @Parameters
+  @Parameters(name = "{0} + {1} + {2} + {3} + {4} + {5} + {6} + {7} + {8} + {9} = {10}")
   public static Collection<Object[]> params() throws IOException {
     return getTestData();
   }
+
+  private static final CrapCalc calc = new CrapCalc();
 
   private final int x;
   private final int y;
@@ -51,6 +53,6 @@ public class DataDrivenCsvTest {
 
   @Test
   public void addAll_givenArrayOfInputs_addsThemAllUp() {
-      assertEquals(new CrapCalc().addAll(x, y, z, a, b, c, d, e, f, g), expectedAnswer);
+      assertEquals(calc.addAll(x, y, z, a, b, c, d, e, f, g), expectedAnswer);
   }
 }

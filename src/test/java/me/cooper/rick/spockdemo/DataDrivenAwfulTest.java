@@ -1,6 +1,6 @@
 package me.cooper.rick.spockdemo;
 
-import static java.util.Collections.singletonList;
+import static java.util.Arrays.asList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.runners.Parameterized.Parameters;
@@ -11,14 +11,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-
 @RunWith(Parameterized.class)
 public class DataDrivenAwfulTest {
 
   @Parameters(name = "{0} + {1} = {2}")
   public static Collection<Object[]> params() {
-      return singletonList(
-          new int[][]{
+      return asList(
+          new Object[][]{
               {1, 1, 2},
               {2, 2, 4},
               {3, 3, 6}

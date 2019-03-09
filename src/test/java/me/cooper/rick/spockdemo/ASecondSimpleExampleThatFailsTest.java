@@ -2,9 +2,8 @@ package me.cooper.rick.spockdemo;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.Ignore;
 import org.junit.Test;
-
-import spock.lang.Ignore;
 
 @Ignore("unless you want to fail")
 public class ASecondSimpleExampleThatFailsTest {

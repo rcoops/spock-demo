@@ -15,10 +15,10 @@ class ExceptionSpec extends Specification {
     }
 
     def "no illegal args"() {
-        when:
+        when: 'adding 1 and 2'
         calc.add(1, 2)
 
-        then: 'EXPLOSION!'
+        then: 'nothing'
         notThrown(IllegalArgumentException)
     }
 

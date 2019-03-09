@@ -15,6 +15,6 @@ class DataDrivenCsvSpec extends Specification {
         calc.add(x, y) == expectedAnswer
 
         where: 'there are multiple complicated combinations of x and y'
-        [x, y, expectedAnswer] << CsvHelper.testData
+        [x, y, z, a, b, c, d, e, f, g, expectedAnswer] << CsvHelper.testData
     }
 }

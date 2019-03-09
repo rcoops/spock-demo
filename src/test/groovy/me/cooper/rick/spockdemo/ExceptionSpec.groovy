@@ -14,7 +14,7 @@ class ExceptionSpec extends Specification {
         thrown(NullPointerException)
     }
 
-    def "no illegal args"() {
+    def "check that add allows ints.. quite redundantly"() {
         when: 'adding 1 and 2'
         calc.add(1, 2)
 

@@ -3,8 +3,10 @@ package me.cooper.rick.spockdemo;
 import static org.junit.Assert.assertEquals;
 
 import static me.cooper.rick.spockdemo.helper.CsvHelperJava.getTestData;
+import static org.junit.runners.Parameterized.Parameters;
 
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,24 +17,22 @@ import org.junit.runners.Parameterized;
 @RunWith(Parameterized.class)
 public class DataDrivenCsvTest {
 
-  private static final CrapCalc calc = new CrapCalc();
-
-  @Parameterized.Parameters
-  public static Collection<List<int[]>> testData() throws IOException {
+  @Parameters
+  public static Collection<Object[]> params() throws IOException {
     return getTestData();
   }
 
-  private int x;
-  private int y;
-  private int z;
-  private int a;
-  private int b;
-  private int c;
-  private int d;
-  private int e;
-  private int f;
-  private int g;
-  private int expectedAnswer;
+  private final int x;
+  private final int y;
+  private final int z;
+  private final int a;
+  private final int b;
+  private final int c;
+  private final int d;
+  private final int e;
+  private final int f;
+  private final int g;
+  private final int expectedAnswer;
 
   public DataDrivenCsvTest(final int x, final int y, final int z, final int a, final int b, final int c, final int d,
       final int e, final int f, final int g, final int expectedAnswer) {
@@ -51,6 +51,6 @@ public class DataDrivenCsvTest {
 
   @Test
   public void addAll_givenArrayOfInputs_addsThemAllUp() {
-      assertEquals(calc.addAll(x, y, z, a, b, c, d, e, f, g), expectedAnswer);
+      assertEquals(new CrapCalc().addAll(x, y, z, a, b, c, d, e, f, g), expectedAnswer);
   }
 }

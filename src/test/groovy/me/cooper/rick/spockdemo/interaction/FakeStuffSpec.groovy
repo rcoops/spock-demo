@@ -1,5 +1,7 @@
-package me.cooper.rick.spockdemo
+package me.cooper.rick.spockdemo.interaction
 
+import me.cooper.rick.spockdemo.ClassToMock
+import me.cooper.rick.spockdemo.ClassToMockWrapper
 import spock.lang.Specification
 
 

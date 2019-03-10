@@ -1,23 +1,30 @@
-package me.cooper.rick.spockdemo;
+package me.cooper.rick.spockdemo.data.driven;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import junitparams.mappers.CsvWithHeaderMapper;
+import me.cooper.rick.spockdemo.CrapCalc;
 
 @RunWith(JUnitParamsRunner.class)
-public class DataDrivenCsv5Test {
+public class DataDrivenCsvBetterTest {
 
   private static final CrapCalc calc = new CrapCalc();
+
+  @Rule
+  public MockitoRule mockito = MockitoJUnit.rule();
 
   @CsvFileSource(resources = "/test-data.csv", numLinesToSkip = 1)
   @ParameterizedTest(name = "{0} + {1} + {2} + {3} + {4} + {5} + {6} + {7} + {8} + {9} = {10}")

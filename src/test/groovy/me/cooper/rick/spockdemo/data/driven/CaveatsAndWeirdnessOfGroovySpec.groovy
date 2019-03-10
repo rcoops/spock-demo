@@ -1,5 +1,7 @@
-package me.cooper.rick.spockdemo
+package me.cooper.rick.spockdemo.data.driven
 
+import me.cooper.rick.spockdemo.CrapCalc
+import me.cooper.rick.spockdemo.Encapsulated
 import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Title

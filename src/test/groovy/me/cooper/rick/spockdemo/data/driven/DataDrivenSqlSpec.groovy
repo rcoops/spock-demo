@@ -1,20 +1,17 @@
-package me.cooper.rick.spockdemo
+package me.cooper.rick.spockdemo.data.driven
 
 import me.cooper.rick.spockdemo.helper.SqlHelper
 import spock.lang.Specification
 import spock.lang.Unroll
 
-import static me.cooper.rick.spockdemo.helper.SqlHelper.clearTestData
-import static me.cooper.rick.spockdemo.helper.SqlHelper.populateTestData
-
 class DataDrivenSqlSpec extends Specification {
 
     def setupSpec() {
-        populateTestData()
+        SqlHelper.populateTestData()
     }
 
     def cleanupSpec() {
-        clearTestData()
+        SqlHelper.clearTestData()
     }
 
     @Unroll

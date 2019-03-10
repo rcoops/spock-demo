@@ -1,5 +1,6 @@
-package me.cooper.rick.spockdemo
+package me.cooper.rick.spockdemo.data.driven
 
+import me.cooper.rick.spockdemo.CrapCalc
 import spock.lang.Specification
 
 class AFirstSimpleExampleSpec extends Specification {

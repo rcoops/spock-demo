@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo;
+package me.cooper.rick.spockdemo.data.driven;
 
 import static java.util.Arrays.asList;
 
@@ -10,6 +10,8 @@ import java.util.Collection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+
+import me.cooper.rick.spockdemo.CrapCalc;
 
 @RunWith(Parameterized.class)
 public class DataDrivenAwfulTest {

@@ -1,5 +1,6 @@
-package me.cooper.rick.spockdemo
+package me.cooper.rick.spockdemo.data.driven
 
+import me.cooper.rick.spockdemo.CrapCalc
 import me.cooper.rick.spockdemo.helper.CsvHelper
 import spock.lang.Shared
 import spock.lang.Specification

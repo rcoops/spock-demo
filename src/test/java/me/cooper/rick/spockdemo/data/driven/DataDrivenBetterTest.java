@@ -1,25 +1,32 @@
-package me.cooper.rick.spockdemo;
+package me.cooper.rick.spockdemo.data.driven;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.stream.Stream;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.NamedParameters;
 import junitparams.Parameters;
+import me.cooper.rick.spockdemo.CrapCalc;
 
 @RunWith(JUnitParamsRunner.class)
 public class DataDrivenBetterTest {
 
   private static final CrapCalc calc = new CrapCalc();
+
+  @Rule
+  public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
   @CsvSource({
       "1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  10",

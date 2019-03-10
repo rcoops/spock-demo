@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo;
+package me.cooper.rick.spockdemo.data.driven;
 
 import org.junit.Rule;
 import org.junit.Test;

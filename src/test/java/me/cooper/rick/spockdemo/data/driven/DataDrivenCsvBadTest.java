@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo;
+package me.cooper.rick.spockdemo.data.driven;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,16 +6,16 @@ import static me.cooper.rick.spockdemo.helper.CsvHelperJava.getTestData;
 import static org.junit.runners.Parameterized.Parameters;
 
 import java.io.IOException;
-import java.io.UncheckedIOException;
 import java.util.Collection;
-import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+import me.cooper.rick.spockdemo.CrapCalc;
+
 @RunWith(Parameterized.class)
-public class DataDrivenCsvTest {
+public class DataDrivenCsvBadTest {
 
   @Parameters(name = "{0} + {1} + {2} + {3} + {4} + {5} + {6} + {7} + {8} + {9} = {10}")
   public static Collection<Object[]> params() throws IOException {
@@ -36,7 +36,7 @@ public class DataDrivenCsvTest {
   private final int g;
   private final int expectedAnswer;
 
-  public DataDrivenCsvTest(final int x, final int y, final int z, final int a, final int b, final int c, final int d,
+  public DataDrivenCsvBadTest(final int x, final int y, final int z, final int a, final int b, final int c, final int d,
       final int e, final int f, final int g, final int expectedAnswer) {
     this.x = x;
     this.y = y;

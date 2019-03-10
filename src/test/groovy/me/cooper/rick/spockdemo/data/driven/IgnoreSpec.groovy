@@ -1,10 +1,10 @@
-package me.cooper.rick.spockdemo
+package me.cooper.rick.spockdemo.data.driven
 
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification
 
-class ZIgnoreSpec extends Specification {
+class IgnoreSpec extends Specification {
 
     def "test true #1"() {
         expect:

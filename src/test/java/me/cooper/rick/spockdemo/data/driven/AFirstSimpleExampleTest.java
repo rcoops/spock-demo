@@ -1,9 +1,11 @@
-package me.cooper.rick.spockdemo;
+package me.cooper.rick.spockdemo.data.driven;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import me.cooper.rick.spockdemo.CrapCalc;
 
 public class AFirstSimpleExampleTest {
 

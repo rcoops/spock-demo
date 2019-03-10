@@ -7,6 +7,7 @@ import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static me.cooper.rick.spockdemo.Fixtures.calc;
+import static me.cooper.rick.spockdemo.Fixtures.encapsulated;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -22,7 +23,7 @@ public class ExceptionTest {
   @Test(expected = NullPointerException.class)
   public void getNullFieldsField_throwsNullPointer_crapWay() {
     // When: accessing a null field
-    new Encapsulated().nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull();
+    encapsulated.nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull();
 
     // Then: EXPLOSION! ...?
   }
@@ -33,7 +34,7 @@ public class ExceptionTest {
     exceptionRule.expect(NullPointerException.class);
 
     // When: accessing a null field
-    new Encapsulated().nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull();
+    encapsulated.nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull();
 
     exceptionRule.expectMessage(isEmptyOrNullString());
   }
@@ -42,7 +43,7 @@ public class ExceptionTest {
   public void getNullFieldsField_throwsNullPointer_tryCatch() {
     try {
       // When: accessing a null field
-      new Encapsulated().nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull();
+      encapsulated.nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull();
       fail("Should have thrown null pointer!");
 
       // Then: EXPLOSION! with detail
@@ -57,7 +58,7 @@ public class ExceptionTest {
     assertThatNullPointerException()
 
         // When: accessing a null field
-        .isThrownBy(() -> new Encapsulated().nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull())
+        .isThrownBy(() -> encapsulated.nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull())
         .withMessage(null);
   }
 
@@ -79,7 +80,7 @@ public class ExceptionTest {
         NullPointerException.class,
 
         // When: accessing a null field
-        () -> new Encapsulated().nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull()
+        () -> encapsulated.nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull()
     );
 
     assertThat(e.getMessage()).isNull();

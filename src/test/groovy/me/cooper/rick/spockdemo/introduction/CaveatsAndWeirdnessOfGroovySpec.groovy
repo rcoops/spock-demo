@@ -3,12 +3,15 @@ package me.cooper.rick.spockdemo.introduction
 import me.cooper.rick.spockdemo.Encapsulated
 import spock.lang.Ignore
 import spock.lang.Specification
+import spock.lang.Stepwise
 import spock.lang.Title
+import spock.util.mop.ConfineMetaClassChanges
 
 import static me.cooper.rick.spockdemo.Fixtures.calc
 import static me.cooper.rick.spockdemo.Fixtures.encapsulated
 
 @Title("Groovy is too gangsta for you")
+@Stepwise
 class CaveatsAndWeirdnessOfGroovySpec extends Specification {
 
     def """This test name is so long that it actually needs multiple lines to describe what's going on. In fact come to
@@ -35,6 +38,7 @@ should be kept to a minimum unless completely necessary. """() {
         answer == 29
     }
 
+    @ConfineMetaClassChanges([Encapsulated])
     def "Groovy doesn't care what you're made of"() {
         given: "We've made up some random toString method"
         Encapsulated.metaClass.toString = {
@@ -42,6 +46,12 @@ should be kept to a minimum unless completely necessary. """() {
         }
 
         expect: 'Groovy is ridiculous'
+        encapsulated.toString() == "I'm not real!"
+    }
+
+    @Ignore("unless you want to fail")
+    def "toString still works if you don't annotate"() {
+        expect: 'Groovy is ridiculously ridiculous'
         encapsulated.toString() == "I'm not real!"
     }
 

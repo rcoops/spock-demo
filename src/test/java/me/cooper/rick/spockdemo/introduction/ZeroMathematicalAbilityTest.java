@@ -7,8 +7,9 @@ import static me.cooper.rick.spockdemo.Fixtures.calc;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class ALackOfMathematicalAbilityTest {
+public class ZeroMathematicalAbilityTest {
 
+  // 100% code coverage!! YAY!
   @Test
   public void square_givenANumber_returnsOne() {
     assertThat(calc.square(1)).isEqualTo(1);

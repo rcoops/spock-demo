@@ -1,15 +1,15 @@
 package me.cooper.rick.spockdemo.miscellaneous
 
-import me.cooper.rick.spockdemo.Encapsulated
 import spock.lang.Specification
 
 import static me.cooper.rick.spockdemo.Fixtures.calc
+import static me.cooper.rick.spockdemo.Fixtures.encapsulated
 
 class ExceptionSpec extends Specification {
 
     def "null throws null pointer - who knew!"() {
         when: 'accessing a null field'
-        new Encapsulated().nullField.interestingFieldAsLongAsMyParentIsNotNull
+        encapsulated.nullField.interestingFieldAsLongAsMyParentIsNotNull
 
         then: 'EXPLOSION!'
         thrown(NullPointerException)

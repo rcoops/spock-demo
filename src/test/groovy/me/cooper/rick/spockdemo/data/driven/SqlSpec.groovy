@@ -4,14 +4,17 @@ import me.cooper.rick.spockdemo.helper.SqlHelper
 import spock.lang.Specification
 import spock.lang.Unroll
 
+import static me.cooper.rick.spockdemo.helper.SqlHelper.clearTestData
+import static me.cooper.rick.spockdemo.helper.SqlHelper.populateTestData
+
 class SqlSpec extends Specification {
 
     def setupSpec() {
-        SqlHelper.populateTestData()
+        populateTestData()
     }
 
     def cleanupSpec() {
-        SqlHelper.clearTestData()
+        clearTestData()
     }
 
     @Unroll
@@ -28,7 +31,7 @@ class SqlSpec extends Specification {
     }
 
     @Unroll
-    def '#expectedName is #expectedJobTitle 2'() {
+    def 'splitting the row also makes #expectedName is #expectedJobTitle'() {
         expect:
         name == expectedName
         jobTitle == expectedJobTitle

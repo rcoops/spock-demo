@@ -22,8 +22,10 @@ import org.springframework.core.io.ClassPathResource;
 
 public class CsvHelperJava {
 
-  public static Collection<Object[]> getTestData() throws IOException {
+  private CsvHelperJava() {
+  }
 
+  public static Collection<Object[]> getTestData() throws IOException {
     try (final BufferedReader br = bufferedReader()) {
       return asList(
           br.lines()

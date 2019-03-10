@@ -2,7 +2,6 @@ package me.cooper.rick.spockdemo.data.driven
 
 import spock.lang.Specification
 
-
 class ButAreConditionsEnoughSpec extends Specification {
 
     def 'well duh'() {
@@ -29,6 +28,4 @@ class ButAreConditionsEnoughSpec extends Specification {
         expect:
         !""
     }
-
-
 }

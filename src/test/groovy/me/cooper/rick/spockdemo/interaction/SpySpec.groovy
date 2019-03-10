@@ -3,7 +3,6 @@ package me.cooper.rick.spockdemo.interaction
 import me.cooper.rick.spockdemo.CrapCalc
 import spock.lang.Specification
 
-
 class SpySpec extends Specification {
 
     def calc = Spy(CrapCalc)
@@ -19,5 +18,4 @@ class SpySpec extends Specification {
         then:
         totalAdditions * calc.add(_, _) >> 2
     }
-
 }

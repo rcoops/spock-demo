@@ -8,5 +8,4 @@ class CsvHelper {
                 .drop(1) // Headers
                 .collect { it.split(',').collect { it.toInteger() } }
     }
-
 }

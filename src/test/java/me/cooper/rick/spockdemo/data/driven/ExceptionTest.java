@@ -6,16 +6,15 @@ import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import static me.cooper.rick.spockdemo.Fixtures.calc;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import me.cooper.rick.spockdemo.CrapCalc;
 import me.cooper.rick.spockdemo.Encapsulated;
 
 public class ExceptionTest {
-
-  private static final CrapCalc calc = new CrapCalc();
 
   @Rule
   public final ExpectedException exceptionRule = ExpectedException.none();
@@ -25,12 +24,12 @@ public class ExceptionTest {
     // When: accessing a null field
     new Encapsulated().nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull();
 
-    // Then: EXPLOSION?
+    // Then: EXPLOSION! ...?
   }
 
   @Test
   public void getNullFieldsField_throwsNullPointer_withRule() {
-    // Expect: EXPLOSION!
+    // Expect: EXPLOSION! with detail
     exceptionRule.expect(NullPointerException.class);
 
     // When: accessing a null field
@@ -46,7 +45,7 @@ public class ExceptionTest {
       new Encapsulated().nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull();
       fail("Should have thrown null pointer!");
 
-      // Then: EXPLOSION!
+      // Then: EXPLOSION! with detail
     } catch (final NullPointerException e) {
       assertThat(e.getMessage()).isNull();
     }
@@ -54,7 +53,7 @@ public class ExceptionTest {
 
   @Test
   public void getNullFieldsField_throwsNullPointer_assertJ() {
-    // Expect: EXPLOSION!
+    // Expect: EXPLOSION! with detail
     assertThatNullPointerException()
 
         // When: accessing a null field

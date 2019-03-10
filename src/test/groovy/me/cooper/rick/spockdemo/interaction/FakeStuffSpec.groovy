@@ -4,7 +4,6 @@ import me.cooper.rick.spockdemo.ClassToMock
 import me.cooper.rick.spockdemo.ClassToMockWrapper
 import spock.lang.Specification
 
-
 class FakeStuffSpec extends Specification {
 
     def mockyMock = Mock(ClassToMock)

@@ -1,14 +1,12 @@
 package me.cooper.rick.spockdemo.data.driven
 
-import me.cooper.rick.spockdemo.CrapCalc
 import me.cooper.rick.spockdemo.helper.CsvHelper
-import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class DataDrivenCsvSpec extends Specification {
+import static me.cooper.rick.spockdemo.Fixtures.calc
 
-    @Shared calc = new CrapCalc()
+class DataDrivenCsvSpec extends Specification {
 
     @Unroll
     def 'csv works as a datasource #x + #y = #expectedAnswer'() {

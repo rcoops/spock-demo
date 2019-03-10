@@ -1,13 +1,12 @@
 package me.cooper.rick.spockdemo.data.driven
 
-import me.cooper.rick.spockdemo.CrapCalc
 import spock.lang.Ignore
 import spock.lang.Specification
 
+import static me.cooper.rick.spockdemo.Fixtures.calc
+
 @Ignore("unless you want to fail")
 class ASecondSimpleExampleThatFailsSpec extends Specification {
-
-    def calc = new CrapCalc()
 
     def "this test has no idea what it's talking about and so will fail"() {
         expect: 'adding 1 and 2 makes ...4?!!'
@@ -22,5 +21,4 @@ class ASecondSimpleExampleThatFailsSpec extends Specification {
         expect: 'they equal! Or do they...?'
         one == two
     }
-
 }

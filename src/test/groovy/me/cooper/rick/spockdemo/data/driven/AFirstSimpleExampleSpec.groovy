@@ -1,17 +1,16 @@
 package me.cooper.rick.spockdemo.data.driven
 
-import me.cooper.rick.spockdemo.CrapCalc
 import spock.lang.Specification
 
-class AFirstSimpleExampleSpec extends Specification {
+import static me.cooper.rick.spockdemo.Fixtures.calc
 
-    def calc = new CrapCalc()
+class AFirstSimpleExampleSpec extends Specification {
 
     def 'I want to make sure that adding 1 to 2 results in 3 and this test will do that (and very well thank you)!'() {
         given: 'nothing... given nothing'
 
         when: 'adding the 1 and 2 together'
-        def answer = calc.add(1, 2)
+        def answer = calc.add 1, 2
 
         then: 'the numbers are magically added to get 3!!'
         answer == 3
@@ -21,5 +20,4 @@ class AFirstSimpleExampleSpec extends Specification {
         expect: '1 and 2 added together makes...3!'
         calc.add(1, 2) == 3
     }
-
 }

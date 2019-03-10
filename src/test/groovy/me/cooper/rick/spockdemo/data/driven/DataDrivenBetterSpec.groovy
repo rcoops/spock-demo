@@ -1,19 +1,18 @@
 package me.cooper.rick.spockdemo.data.driven
 
-import me.cooper.rick.spockdemo.CrapCalc
 import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class DataDrivenBetterSpec extends Specification {
+import static me.cooper.rick.spockdemo.Fixtures.calc
 
-    def calc = new CrapCalc()
+class DataDrivenBetterSpec extends Specification {
 
     def "Let's test the really really advanced addAll logic now"() {
         given: "nothing... given nothing"
 
         when: "adding all the numbers"
-        def answer = calc.addAll(x, y, z, a, b, c, d, e, f, g)
+        def answer = calc.addAll x, y, z, a, b, c, d, e, f, g
 
         then: "the numbers are magically added!!"
         answer == expectedAnswer
@@ -34,10 +33,10 @@ class DataDrivenBetterSpec extends Specification {
         //@formatter:on
     }
 
-    @Ignore("until you want to fail")
+    @Ignore("unless you want to fail")
     def 'this is DEFINITELY better for lots of test cases'() {
         when: 'adding x and y'
-        def answer = calc.addAll(x, y, z, a, b, c, d, e, f, g)
+        def answer = calc.addAll x, y, z, a, b, c, d, e, f, g
 
         then: 'the answer should be as expected'
         answer == expectedAnswer
@@ -59,7 +58,7 @@ class DataDrivenBetterSpec extends Specification {
     @Unroll
     def 'this is even better! #x + #y + #a + #b + #c + #c + #d + #e + #f + #g = #expectedAnswer'() {
         when: 'adding x and y'
-        def answer = calc.addAll(x, y, z, a, b, c, d, e, f, g)
+        def answer = calc.addAll x, y, z, a, b, c, d, e, f, g
 
         then: 'the answer should be as expected'
         answer == expectedAnswer
@@ -77,5 +76,4 @@ class DataDrivenBetterSpec extends Specification {
         9  | 9  | 9  | 9  | 9  | 9  | 9  | 9  | 9  | 9  || 90
         10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 || 100
     }
-
 }

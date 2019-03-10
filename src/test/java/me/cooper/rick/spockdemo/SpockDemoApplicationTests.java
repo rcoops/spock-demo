@@ -12,5 +12,4 @@ public class SpockDemoApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
 }

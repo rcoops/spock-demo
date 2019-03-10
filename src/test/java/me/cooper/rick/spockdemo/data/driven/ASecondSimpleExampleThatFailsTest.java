@@ -2,6 +2,8 @@ package me.cooper.rick.spockdemo.data.driven;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import static me.cooper.rick.spockdemo.Fixtures.calc;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -9,8 +11,6 @@ import me.cooper.rick.spockdemo.CrapCalc;
 
 @Ignore("unless you want to fail")
 public class ASecondSimpleExampleThatFailsTest {
-
-  private static final CrapCalc calc = new CrapCalc();
 
   @Test
   public void add_givenOneAndTwo_returnsFour() {

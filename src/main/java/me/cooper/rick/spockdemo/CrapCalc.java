@@ -16,4 +16,8 @@ public class CrapCalc {
   public int addAll(final int... all) {
     return stream(all).reduce(this::add).orElseThrow(() -> new NumberFormatException("Something's up"));
   }
+
+  public int square(final int number) {
+    return number * number;
+  }
 }

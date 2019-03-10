@@ -16,7 +16,7 @@ class IgnoreSpec extends Specification {
         false
     }
 
-    @Ignore
+    @Ignore("unless you want to fail")
     def "test true #3"() {
         expect:
         false
@@ -52,5 +52,4 @@ class IgnoreSpec extends Specification {
         expect:
         true
     }
-
 }

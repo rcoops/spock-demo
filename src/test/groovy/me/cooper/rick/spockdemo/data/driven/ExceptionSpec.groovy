@@ -1,12 +1,11 @@
 package me.cooper.rick.spockdemo.data.driven
 
-import me.cooper.rick.spockdemo.CrapCalc
 import me.cooper.rick.spockdemo.Encapsulated
 import spock.lang.Specification
 
-class ExceptionSpec extends Specification {
+import static me.cooper.rick.spockdemo.Fixtures.calc
 
-    def calc = new CrapCalc()
+class ExceptionSpec extends Specification {
 
     def "null throws null pointer - who knew!"() {
         when: 'accessing a null field'
@@ -14,11 +13,12 @@ class ExceptionSpec extends Specification {
 
         then: 'EXPLOSION!'
         thrown(NullPointerException)
+        // OR NullPointerException thrown = thrown()
     }
 
     def "check that add allows ints.. quite redundantly"() {
         when: 'adding 1 and 2'
-        calc.add(1, 2)
+        calc.add 1, 2
 
         then: 'nothing'
         notThrown(IllegalArgumentException)
@@ -34,7 +34,6 @@ class ExceptionSpec extends Specification {
 
         then: 'EXPLOSION! with detail'
         def thrown = thrown(Exception)
-        // NullPointerException thrown = thrown()
         thrown.cause == f
         thrown.message == "oh noes!"
     }

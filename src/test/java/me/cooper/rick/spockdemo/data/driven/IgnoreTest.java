@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import me.cooper.rick.spockdemo.rule.IgnoreRestRule;
 
-public class ZIgnoreTest {
+public class IgnoreTest {
 
   @Rule
   public IgnoreRestRule test = new IgnoreRestRule("testTrue6");

@@ -3,6 +3,8 @@ package me.cooper.rick.spockdemo.data.driven;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
+import static me.cooper.rick.spockdemo.Fixtures.calc;
+
 import java.util.stream.Stream;
 
 import org.junit.Rule;
@@ -18,15 +20,16 @@ import org.mockito.junit.MockitoRule;
 import junitparams.JUnitParamsRunner;
 import junitparams.NamedParameters;
 import junitparams.Parameters;
-import me.cooper.rick.spockdemo.CrapCalc;
 
 @RunWith(JUnitParamsRunner.class)
 public class DataDrivenBetterTest {
 
-  private static final CrapCalc calc = new CrapCalc();
-
   @Rule
   public final MockitoRule mockitoRule = MockitoJUnit.rule();
+
+  /*
+   * JUnit 5
+   */
 
   @CsvSource({
       "1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  10",
@@ -70,6 +73,10 @@ public class DataDrivenBetterTest {
         //@formatter:on
     );
   }
+
+  /*
+   * JUnitParams
+   */
 
   @Test
   @Parameters({

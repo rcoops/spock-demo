@@ -2,6 +2,7 @@ package me.cooper.rick.spockdemo.data.driven;
 
 import static org.junit.Assert.assertEquals;
 
+import static me.cooper.rick.spockdemo.Fixtures.calc;
 import static me.cooper.rick.spockdemo.helper.CsvHelperJava.getTestData;
 import static org.junit.runners.Parameterized.Parameters;
 
@@ -21,8 +22,6 @@ public class DataDrivenCsvBadTest {
   public static Collection<Object[]> params() throws IOException {
     return getTestData();
   }
-
-  private static final CrapCalc calc = new CrapCalc();
 
   private final int x;
   private final int y;

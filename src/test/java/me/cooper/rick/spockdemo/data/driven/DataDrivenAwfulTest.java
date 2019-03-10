@@ -5,6 +5,8 @@ import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.runners.Parameterized.Parameters;
 
+import static me.cooper.rick.spockdemo.Fixtures.calc;
+
 import java.util.Collection;
 
 import org.junit.Test;
@@ -40,7 +42,7 @@ public class DataDrivenAwfulTest {
   @Test
   public void addAll_givenArrayOfInputs_addsThemAllUp() {
     // When: adding x and y
-    int result = new CrapCalc().add(firstInput, secondInput);
+    int result = calc.add(firstInput, secondInput);
 
     // Then: the answer should be as expected
     assertEquals(result, expectedOutput);

@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.data.driven;
+package me.cooper.rick.spockdemo.miscellaneous;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatNullPointerException;

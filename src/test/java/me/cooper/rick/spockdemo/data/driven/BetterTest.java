@@ -22,7 +22,7 @@ import junitparams.NamedParameters;
 import junitparams.Parameters;
 
 @RunWith(JUnitParamsRunner.class)
-public class DataDrivenBetterTest {
+public class BetterTest {
 
   @Rule
   public final MockitoRule mockitoRule = MockitoJUnit.rule();

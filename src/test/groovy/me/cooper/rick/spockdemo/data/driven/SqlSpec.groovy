@@ -4,7 +4,7 @@ import me.cooper.rick.spockdemo.helper.SqlHelper
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class DataDrivenSqlSpec extends Specification {
+class SqlSpec extends Specification {
 
     def setupSpec() {
         SqlHelper.populateTestData()

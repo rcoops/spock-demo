@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.data.driven
+package me.cooper.rick.spockdemo.miscellaneous
 
 import spock.lang.Ignore
 import spock.lang.IgnoreRest

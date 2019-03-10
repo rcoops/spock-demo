@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.data.driven
+package me.cooper.rick.spockdemo.introduction
 
 import me.cooper.rick.spockdemo.Encapsulated
 import spock.lang.Ignore

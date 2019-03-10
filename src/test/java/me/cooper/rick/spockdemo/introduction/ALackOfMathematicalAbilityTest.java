@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.data.driven;
+package me.cooper.rick.spockdemo.introduction;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -7,7 +7,7 @@ import static me.cooper.rick.spockdemo.Fixtures.calc;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class ZeroMathematicalAbilityTest {
+public class ALackOfMathematicalAbilityTest {
 
   @Test
   public void square_givenANumber_returnsOne() {

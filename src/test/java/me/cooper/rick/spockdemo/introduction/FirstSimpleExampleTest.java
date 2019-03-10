@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.data.driven;
+package me.cooper.rick.spockdemo.introduction;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import me.cooper.rick.spockdemo.CrapCalc;
 
-public class AFirstSimpleExampleTest {
+public class FirstSimpleExampleTest {
 
   @Test
   public void add_givenOneAndTwo_returnsThree() {

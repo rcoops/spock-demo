@@ -6,7 +6,7 @@ import static me.cooper.rick.spockdemo.Fixtures.calc;
 
 import org.junit.Test;
 
-public class DataDrivenBestVanillaJUnitCanManageTest {
+public class BestVanillaJUnitCanManageTest {
 
   @Test
   public void add_givenOneAndOne_returnsTwo() {

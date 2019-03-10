@@ -16,7 +16,7 @@ import org.junit.runners.Parameterized;
 import me.cooper.rick.spockdemo.CrapCalc;
 
 @RunWith(Parameterized.class)
-public class DataDrivenCsvBadTest {
+public class CsvBadTest {
 
   @Parameters(name = "{0} + {1} + {2} + {3} + {4} + {5} + {6} + {7} + {8} + {9} = {10}")
   public static Collection<Object[]> params() throws IOException {
@@ -35,7 +35,7 @@ public class DataDrivenCsvBadTest {
   private final int g;
   private final int expectedAnswer;
 
-  public DataDrivenCsvBadTest(final int x, final int y, final int z, final int a, final int b, final int c, final int d,
+  public CsvBadTest(final int x, final int y, final int z, final int a, final int b, final int c, final int d,
       final int e, final int f, final int g, final int expectedAnswer) {
     this.x = x;
     this.y = y;

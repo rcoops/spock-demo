@@ -6,7 +6,7 @@ import spock.lang.Unroll
 
 import static me.cooper.rick.spockdemo.Fixtures.calc
 
-class DataDrivenBetterSpec extends Specification {
+class BetterSpec extends Specification {
 
     def "Let's test the really really advanced addAll logic now"() {
         given: "nothing... given nothing"

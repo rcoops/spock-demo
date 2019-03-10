@@ -16,7 +16,7 @@ import org.junit.runners.Parameterized;
 import me.cooper.rick.spockdemo.CrapCalc;
 
 @RunWith(Parameterized.class)
-public class DataDrivenAwfulTest {
+public class AwfulTest {
 
   @Parameters(name = "{0} + {1} = {2}")
   public static Collection<Object[]> params() {
@@ -33,7 +33,7 @@ public class DataDrivenAwfulTest {
   private int secondInput;
   private int expectedOutput;
 
-  public DataDrivenAwfulTest(final int firstInput, int secondInput, final int expectedOutput) {
+  public AwfulTest(final int firstInput, int secondInput, final int expectedOutput) {
     this.firstInput = firstInput;
     this.secondInput = secondInput;
     this.expectedOutput = expectedOutput;

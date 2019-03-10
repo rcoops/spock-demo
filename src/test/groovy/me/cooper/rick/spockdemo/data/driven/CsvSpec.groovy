@@ -6,7 +6,7 @@ import spock.lang.Unroll
 
 import static me.cooper.rick.spockdemo.Fixtures.calc
 
-class DataDrivenCsvSpec extends Specification {
+class CsvSpec extends Specification {
 
     @Unroll
     def 'csv works as a datasource #x + #y = #expectedAnswer'() {

@@ -17,7 +17,7 @@ import junitparams.JUnitParamsRunner;
 import junitparams.mappers.CsvWithHeaderMapper;
 
 @RunWith(JUnitParamsRunner.class)
-public class DataDrivenCsvBetterTest {
+public class CsvBetterTest {
 
   @Rule
   public MockitoRule mockito = MockitoJUnit.rule();

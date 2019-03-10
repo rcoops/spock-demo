@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 import static me.cooper.rick.spockdemo.Fixtures.calc
 
-class DataDrivenAwfulSpec extends Specification {
+class AwfulSpec extends Specification {
 
     def "I actually think I want to test more than just two numbers as I don't trust '+'"() {
         when: 'adding x and y'

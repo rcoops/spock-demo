@@ -16,4 +16,8 @@ public class ClassToMockWrapper {
     mock.doStuff();
   }
 
+  public void doOtherStuffWithMock() {
+    mock.doOtherStuff("hello", 5);
+  }
+
 }

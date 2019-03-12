@@ -10,11 +10,10 @@ import static org.hamcrest.Matchers.greaterThan
 
 class FakeStuffSpec extends Specification {
 
-    def mockyMock
+    def mockyMock = Mock(Mockable)
     def mockyMockWrapper
 
     def setup() {
-        mockyMock = Mock(Mockable)
         mockyMockWrapper = new MockWrapper(mockyMock)
     }
 
@@ -24,8 +23,6 @@ class FakeStuffSpec extends Specification {
 
         then: 'it delegates'
         1 * mockyMock.doStuff()
-        0 * _._
-        // OR 0 * _
     }
 
     def 'strict mocking'() {
@@ -34,7 +31,8 @@ class FakeStuffSpec extends Specification {
 
         then: 'it maybe calls the mock but definitely nothing else'
         _ * mockyMock.doStuff()
-        0 * _._
+        0 * _._(*_)
+        // OR 0 * _._
         // OR 0 * _
     }
 

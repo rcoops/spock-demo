@@ -24,11 +24,19 @@ class FakeStuffSpec extends Specification {
 
         then: 'it delegates'
         1 * mockyMock.doStuff()
-        0 * _
+        0 * _._
+        // OR 0 * _
     }
 
-    //TODO _ * mockyMoc.doStuff() needed for strict mocking (if you do 0 * _, you might want to allow
-    // that something could have called)
+    def 'strict mocking'() {
+        when: 'wrapper does stuff'
+        mockyMockWrapper.doStuff()
+
+        then: 'it maybe calls the mock but definitely nothing else'
+        _ * mockyMock.doStuff()
+        0 * _._
+        // OR 0 * _
+    }
 
     def 'does... some kind of stuff?'() {
         when: 'wrapper does stuff'

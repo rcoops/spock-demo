@@ -7,7 +7,7 @@ import static me.cooper.rick.spockdemo.Fixtures.calc;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class ZeroMathematicalAbilityTest {
+public class AbsolutelyNoMathematicalAbilityTest {
 
   // 100% code coverage!! YAY!
   @Test

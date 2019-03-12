@@ -13,8 +13,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import me.cooper.rick.spockdemo.CrapCalc;
-
 @RunWith(Parameterized.class)
 public class AwfulTest {
 
@@ -29,11 +27,11 @@ public class AwfulTest {
       );
   }
 
-  private int firstInput;
-  private int secondInput;
-  private int expectedOutput;
+  private final int firstInput;
+  private final int secondInput;
+  private final int expectedOutput;
 
-  public AwfulTest(final int firstInput, int secondInput, final int expectedOutput) {
+  public AwfulTest(final int firstInput, final int secondInput, final int expectedOutput) {
     this.firstInput = firstInput;
     this.secondInput = secondInput;
     this.expectedOutput = expectedOutput;
@@ -47,5 +45,4 @@ public class AwfulTest {
     // Then: the answer should be as expected
     assertEquals(result, expectedOutput);
   }
-
 }

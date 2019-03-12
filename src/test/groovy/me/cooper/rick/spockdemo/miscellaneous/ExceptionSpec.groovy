@@ -7,34 +7,33 @@ import static me.cooper.rick.spockdemo.Fixtures.encapsulated
 
 class ExceptionSpec extends Specification {
 
-    def "null throws null pointer - who knew!"() {
+    def 'null throws null pointer - who knew!'() {
         when: 'accessing a null field'
         encapsulated.nullField.interestingFieldAsLongAsMyParentIsNotNull
 
         then: 'EXPLOSION!'
-        thrown(NullPointerException)
-        // OR NullPointerException thrown = thrown()
+        thrown NullPointerException
     }
 
-    def "check that add allows ints.. quite redundantly"() {
+    def 'check that add allows ints.. quite redundantly'() {
         when: 'adding 1 and 2'
         calc.add 1, 2
 
         then: 'nothing'
-        notThrown(IllegalArgumentException)
+        notThrown IllegalArgumentException
     }
 
-    def "Exception Inspection"() {
+    def 'Exception Inspection'() {
         given: 'a rebel WITH a cause'
         def f = new IllegalArgumentException()
-        def e = new Exception("oh noes!", f)
 
         when: 'it gets thrown'
-        throw e
+        throw new Exception('oh noes!', f)
 
         then: 'EXPLOSION! with detail'
-        def thrown = thrown(Exception)
+        def thrown = thrown Exception
+        // OR Exception thrown = thrown()
         thrown.cause == f
-        thrown.message == "oh noes!"
+        thrown.message == 'oh noes!'
     }
 }

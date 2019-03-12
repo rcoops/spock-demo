@@ -1,10 +1,10 @@
 package me.cooper.rick.spockdemo.data.driven;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.runners.Parameterized.Parameters;
 
 import static me.cooper.rick.spockdemo.Fixtures.calc;
 import static me.cooper.rick.spockdemo.helper.CsvHelperJava.getTestData;
-import static org.junit.runners.Parameterized.Parameters;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -12,8 +12,6 @@ import java.util.Collection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
-import me.cooper.rick.spockdemo.CrapCalc;
 
 @RunWith(Parameterized.class)
 public class CsvBadTest {

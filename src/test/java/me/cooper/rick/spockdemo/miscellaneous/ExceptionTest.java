@@ -13,8 +13,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import me.cooper.rick.spockdemo.Encapsulated;
-
 public class ExceptionTest {
 
   @Rule

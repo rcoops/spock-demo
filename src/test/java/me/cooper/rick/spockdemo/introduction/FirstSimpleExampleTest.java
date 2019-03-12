@@ -1,13 +1,10 @@
 package me.cooper.rick.spockdemo.introduction;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 
 import static me.cooper.rick.spockdemo.Fixtures.calc;
 
 import org.junit.Test;
-
-import me.cooper.rick.spockdemo.CrapCalc;
 
 public class FirstSimpleExampleTest {
 
@@ -28,5 +25,4 @@ public class FirstSimpleExampleTest {
     // Expect: 1 and 2 added together makes...3!
     assertThat(calc.add(1, 2)).isEqualTo(3);
   }
-
 }

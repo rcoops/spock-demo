@@ -49,7 +49,7 @@ should be kept to a minimum unless completely necessary. """() {
         encapsulated.toString() == "I'm not real!"
     }
 
-    @Ignore("unless you want to fail")
+    @Ignore('unless you want to fail')
     def "toString still works if you don't annotate"() {
         expect: 'Groovy is ridiculously ridiculous'
         encapsulated.toString() == "I'm not real!"
@@ -95,7 +95,7 @@ should be kept to a minimum unless completely necessary. """() {
         }
     }
 
-    @Ignore("unless you want to fail")
+    @Ignore('unless you want to fail')
     def "deal with brackets!"() {
         expect: 'true AND false??'
         if (true) {

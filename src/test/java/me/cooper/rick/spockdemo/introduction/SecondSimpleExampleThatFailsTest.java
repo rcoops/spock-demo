@@ -7,8 +7,6 @@ import static me.cooper.rick.spockdemo.Fixtures.calc;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import me.cooper.rick.spockdemo.CrapCalc;
-
 @Ignore("unless you want to fail")
 public class SecondSimpleExampleThatFailsTest {
 

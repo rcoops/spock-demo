@@ -5,7 +5,7 @@ import spock.lang.Specification
 
 import static me.cooper.rick.spockdemo.Fixtures.calc
 
-@Ignore("unless you want to fail")
+@Ignore('unless you want to fail')
 class ASecondSimpleExampleThatFailsSpec extends Specification {
 
     def "this test has no idea what it's talking about and so will fail"() {

@@ -5,7 +5,6 @@ import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Stepwise
 import spock.lang.Title
-import spock.util.mop.ConfineMetaClassChanges
 
 import static me.cooper.rick.spockdemo.Fixtures.calc
 import static me.cooper.rick.spockdemo.Fixtures.encapsulated
@@ -16,7 +15,7 @@ class CaveatsAndWeirdnessOfGroovySpec extends Specification {
 
     def """This test name is so long that it actually needs multiple lines to describe what's going on. In fact come to
 think of it this name is probably going on for a bit longer than needed and in my humble opinion this sort of thing
-should be kept to a minimum unless completely necessary. """() {
+should be kept to a minimum unless completely necessary."""() {
         expect:
         true
     }
@@ -38,7 +37,7 @@ should be kept to a minimum unless completely necessary. """() {
         answer == 29
     }
 
-    @ConfineMetaClassChanges([Encapsulated])
+//    @ConfineMetaClassChanges([Encapsulated])
     def "Groovy doesn't care what you're made of"() {
         given: "We've made up some random toString method"
         Encapsulated.metaClass.toString = {
@@ -49,8 +48,8 @@ should be kept to a minimum unless completely necessary. """() {
         encapsulated.toString() == "I'm not real!"
     }
 
-    @Ignore('unless you want to fail')
-    def "toString still works if you don't annotate"() {
+//    @Ignore('unless you want to fail')
+    def "...it still doesn't care"() {
         expect: 'Groovy is ridiculously ridiculous'
         encapsulated.toString() == "I'm not real!"
     }

@@ -14,6 +14,9 @@ class AFirstSimpleExampleSpec extends Specification {
 
         then: 'the numbers are magically added to get 3!!'
         answer == 3
+
+        cleanup: 'completely unnecessary cleanup'
+        answer = null
     }
 
     def 'I think I can make this test simpler!'() {

@@ -27,9 +27,7 @@ public class CsvHelperJava {
 
   private static BufferedReader bufferedReader() {
     return new BufferedReader(
-        new InputStreamReader(
-            requireNonNull(CsvHelperJava.class.getClassLoader().getResourceAsStream("test-data.csv"))
-        )
+        new InputStreamReader(requireNonNull(CsvHelperJava.class.getClassLoader().getResourceAsStream("test-data.csv")))
     );
   }
 }

@@ -6,6 +6,7 @@ import spock.lang.Unroll
 
 import static me.cooper.rick.spockdemo.Fixtures.calc
 
+@SuppressWarnings("all")
 class CsvSpec extends Specification {
 
     @Unroll

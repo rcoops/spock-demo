@@ -5,6 +5,7 @@ import spock.lang.Specification
 import static me.cooper.rick.spockdemo.Fixtures.calc
 import static me.cooper.rick.spockdemo.Fixtures.encapsulated
 
+@SuppressWarnings("all")
 class ExceptionSpec extends Specification {
 
     def 'null throws null pointer - who knew!'() {

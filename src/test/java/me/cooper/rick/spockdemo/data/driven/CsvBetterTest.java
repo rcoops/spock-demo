@@ -16,6 +16,7 @@ import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 import junitparams.mappers.CsvWithHeaderMapper;
 
+@SuppressWarnings("all")
 @RunWith(JUnitParamsRunner.class)
 public class CsvBetterTest {
 

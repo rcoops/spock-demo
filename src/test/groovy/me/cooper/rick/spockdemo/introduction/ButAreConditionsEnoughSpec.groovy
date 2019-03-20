@@ -2,6 +2,7 @@ package me.cooper.rick.spockdemo.introduction
 
 import spock.lang.Specification
 
+@SuppressWarnings("all")
 class ButAreConditionsEnoughSpec extends Specification {
 
     def 'well duh'() {

@@ -6,7 +6,7 @@ import static me.cooper.rick.spockdemo.Fixtures.calc;
 
 import org.junit.Test;
 
-public class BestVanillaJUnitCanManageTest {
+public class BestVanillaJUnitCanManageIfYouWantToTestMoreThanOneThingTest {
 
   @Test
   public void add_givenOneAndOne_returnsTwo() {

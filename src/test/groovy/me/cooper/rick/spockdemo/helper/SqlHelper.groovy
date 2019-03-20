@@ -2,6 +2,7 @@ package me.cooper.rick.spockdemo.helper
 
 import groovy.sql.Sql
 
+@SuppressWarnings("all")
 class SqlHelper {
 
     private static sql = Sql.newInstance "jdbc:h2:mem:test", "org.h2.Driver"

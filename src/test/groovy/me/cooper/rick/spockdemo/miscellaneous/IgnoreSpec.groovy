@@ -4,6 +4,7 @@ import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification
 
+@SuppressWarnings("all")
 class IgnoreSpec extends Specification {
 
     def 'test true #1'() {

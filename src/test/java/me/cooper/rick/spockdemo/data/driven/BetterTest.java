@@ -21,6 +21,7 @@ import junitparams.JUnitParamsRunner;
 import junitparams.NamedParameters;
 import junitparams.Parameters;
 
+@SuppressWarnings("all")
 @RunWith(JUnitParamsRunner.class)
 public class BetterTest {
 

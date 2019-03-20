@@ -23,6 +23,10 @@ public class MockWrapper {
     mock.doOtherStuff();
   }
 
+  public String getStuff() {
+    return mock.getStuff();
+  }
+
   public void doStuff(final int number) {
     mock.doStuff(number);
   }

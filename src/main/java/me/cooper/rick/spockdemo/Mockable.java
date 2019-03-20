@@ -11,6 +11,10 @@ public class Mockable {
   public void doOtherStuff() {
   }
 
+  public String getStuff() {
+    return "Hello World!";
+  }
+
   public void doStuff(final int number) {
 
   }

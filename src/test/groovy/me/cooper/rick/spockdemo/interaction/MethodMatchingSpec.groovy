@@ -34,17 +34,17 @@ class MethodMatchingSpec extends Specification {
         when: 'wrapper does stuff'
         mockyMockWrapper.doStuff()
 
-        then: 'it calls...something on the delegate'
+        then: 'it calls...something on the delegate WITHOUT args'
         1 * mockyMock._()
-//        OR 1 * mockyMock._
     }
 
     def 'does stuff... dont care how or with what'() {
         when: 'wrapper does stuff'
         mockyMockWrapper.doStuffWithArgs()
 
-        then: 'it calls...something on the delegate'
+        then: 'it calls...something on the delegate with 0 or more args'
         1 * mockyMock._
+        // EQUIVALENT TO 1 * mockyMock._(*_)
     }
 
     def 'does stuff with something resembling a method'() {

@@ -53,4 +53,7 @@ public class MockWrapper {
     mock.doStuff("Hello World!", 5, 1.0f);
   }
 
+  public void doStuffWithSomeArgs() {
+    mock.doStuff(new SomeArgs());
+  }
 }

@@ -2,7 +2,6 @@ package me.cooper.rick.spockdemo.interaction
 
 import me.cooper.rick.spockdemo.MockWrapper
 import me.cooper.rick.spockdemo.Mockable
-import spock.lang.Shared
 import spock.lang.Specification
 
 import static org.hamcrest.Matchers.greaterThan
@@ -26,7 +25,7 @@ class ArgumentMatchingSpec extends Specification {
     }
 
     def 'has to be three args'() {
-        when: 'doing stuff with the string'
+        when: 'doing stuff with args'
         mockyMockWrapper.doStuffWithArgs()
 
         then: 'stuff is done with exactly three things'

@@ -21,7 +21,7 @@ should be kept to a minimum unless completely necessary."""() {
         true
     }
 
-    def "Groovy doesn't care about your privacy"() {
+    def "Groovy doesn't respect your privacy"() {
         expect: "it takes 'private' as a suggestion rather than a rule"
         Encapsulated.definitelyPrivateField == "ha! you'll never see me cos: encapsulation right?"
     }
@@ -78,7 +78,7 @@ should be kept to a minimum unless completely necessary."""() {
         when:
         throwCheckedExceptionWithoutActuallyChecking()
         then:
-        thrown(IOException)
+        thrown IOException
     }
 
     def throwCheckedExceptionWithoutActuallyChecking() {

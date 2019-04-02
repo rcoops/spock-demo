@@ -53,15 +53,15 @@ class ArgumentMatchingSpec extends Specification {
     }
 
     def 'check some different arg conditions'() {
-        given:
-        def isBetween = { it, gt, lt -> it > gt && it < lt }
+        given: "we've implemented our own matcher, awful though it is"
+        def isBetween = { it, gt, lt -> gt < it && it < lt }
         when: 'doing stuff with some args'
         mockyMockWrapper.doStuffWithArgs()
 
         then: 'stuff is done with these things'
         1 * mockyMock.doStuff(
                 _ as String,
-                { it > 0 && it < 20 },
+                { 0 < it && it < 20 },
 //                { isBetween(it, 0, 20) },
                 !null
         )

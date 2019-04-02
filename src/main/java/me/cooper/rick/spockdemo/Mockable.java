@@ -31,6 +31,18 @@ public class Mockable {
 
   }
 
+  public void one() {
+
+  }
+
+  public void two() {
+
+  }
+
+  public void three() {
+
+  }
+
   public void doStuffWithMaxSizeInt(final int noBiggerThanTen) {
     if (noBiggerThanTen > 10) {
       throw new IllegalArgumentException(format("%d may not be greater than 10", noBiggerThanTen));

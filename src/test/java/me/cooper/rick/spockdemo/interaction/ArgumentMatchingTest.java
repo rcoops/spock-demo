@@ -1,8 +1,8 @@
 package me.cooper.rick.spockdemo.interaction;
 
-import static org.mockito.AdditionalMatchers.gt;
-import static org.mockito.AdditionalMatchers.not;
+import static org.mockito.AdditionalMatchers.*;
 import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 
 import org.junit.Before;
@@ -46,12 +46,22 @@ public class ArgumentMatchingTest {
   }
 
   @Test
-  public void doStuffWithArgs_callsDoStuff_withThreeSpecificArgs() {
+  public void doStuffWithArgs_callsDoStuff_withArgsThatFulfillConditions() {
     // When: doing stuff with the string
     mockyMockWrapper.doStuffWithArgs();
 
     // Then: stuff is done with exactly three things
     verify(mockyMock)
-        .doStuff(eq("Hello World!"), gt(2), not(6.0f)); // Forces you to care about the arg
+        .doStuff(eq("Hello World!"), gt(2), not(eq(6.0f)));
+  }
+
+  @Test
+  public void doStuffWithArgs_callsDoStuff_withArgsThatFulfillOtherConditions() {
+    // When: doing stuff with the string
+    mockyMockWrapper.doStuffWithArgs();
+
+    // Then: stuff is done with exactly three things
+    verify(mockyMock)
+        .doStuff(isA(String.class), and(gt(0), lt(20)), isNotNull());
   }
 }

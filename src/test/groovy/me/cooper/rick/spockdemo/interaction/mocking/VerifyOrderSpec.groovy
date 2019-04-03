@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.interaction
+package me.cooper.rick.spockdemo.interaction.mocking
 
 import me.cooper.rick.spockdemo.MockWrapper
 import me.cooper.rick.spockdemo.Mockable
@@ -15,15 +15,14 @@ class VerifyOrderSpec extends Specification {
     }
 
     def 'does stuff in order'() {
-        when:
+        when: 'doing stuff in order'
         mockyMockWrapper.doStuffInOrder()
 
-        then: 'first calls one'
+        then: 'calls one'
         1 * mockyMock.one()
         then: 'calls two'
         1 * mockyMock.two()
         then: 'calls three'
         1 * mockyMock.three()
     }
-
 }

@@ -1,11 +1,11 @@
-package me.cooper.rick.spockdemo.interaction
+package me.cooper.rick.spockdemo.interaction.mocking
 
 import me.cooper.rick.spockdemo.MockWrapper
 import me.cooper.rick.spockdemo.Mockable
 import spock.lang.Specification
 
 @SuppressWarnings("all")
-class MethodMatchingSpec extends Specification {
+class MatchingMethodSpec extends Specification {
 
     def mockyMock = Mock(Mockable)
     def mockyMockWrapper
@@ -54,5 +54,4 @@ class MethodMatchingSpec extends Specification {
         then: "it calls...something beginning with d and ending with 2 'f's on the delegate"
         1 * mockyMock./d.*f{2}/()
     }
-
 }

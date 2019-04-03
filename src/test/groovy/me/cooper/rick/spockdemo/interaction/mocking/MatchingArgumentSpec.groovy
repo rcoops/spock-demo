@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.interaction
+package me.cooper.rick.spockdemo.interaction.mocking
 
 import me.cooper.rick.spockdemo.MockWrapper
 import me.cooper.rick.spockdemo.Mockable
@@ -7,7 +7,7 @@ import spock.lang.Specification
 import static org.hamcrest.Matchers.greaterThan
 
 @SuppressWarnings("all")
-class ArgumentMatchingSpec extends Specification {
+class MatchingArgumentSpec extends Specification {
 
     def mockyMock = Mock(Mockable)
     def mockyMockWrapper

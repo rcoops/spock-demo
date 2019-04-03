@@ -1,11 +1,11 @@
-package me.cooper.rick.spockdemo.interaction
+package me.cooper.rick.spockdemo.interaction.mocking
 
 import me.cooper.rick.spockdemo.MockWrapper
 import me.cooper.rick.spockdemo.Mockable
 import spock.lang.Specification
 
 @SuppressWarnings("all")
-class TargetMatchingSpec extends Specification {
+class MatchingTargetSpec extends Specification {
 
     def mockyMock = Mock(Mockable)
     def mockyMockWrapper

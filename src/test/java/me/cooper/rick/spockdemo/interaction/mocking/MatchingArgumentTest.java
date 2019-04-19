@@ -15,7 +15,7 @@ import me.cooper.rick.spockdemo.MockWrapper;
 import me.cooper.rick.spockdemo.Mockable;
 
 @RunWith(MockitoJUnitRunner.class)
-public class ArgumentMatchingTest {
+public class MatchingArgumentTest {
 
   @Mock
   private Mockable mockyMock;

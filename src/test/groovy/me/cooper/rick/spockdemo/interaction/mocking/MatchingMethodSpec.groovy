@@ -26,7 +26,7 @@ class MatchingMethodSpec extends Specification {
         when: 'wrapper does stuff'
         mockyMockWrapper.getStuff()
 
-        then: 'it calls doStuff on the delegate'
+        then: 'it calls getStuff on the delegate'
         1 * mockyMock.stuff
     }
 
@@ -43,8 +43,15 @@ class MatchingMethodSpec extends Specification {
         mockyMockWrapper.doStuffWithArgs()
 
         then: 'it calls...something on the delegate with 0 or more args'
+        1 * mockyMock._(*_)
+    }
+
+    def 'does stuff... dont care how or with what (with less typing)'() {
+        when: 'wrapper does stuff'
+        mockyMockWrapper.doStuffWithArgs()
+
+        then: 'it calls...something on the delegate with 0 or more args'
         1 * mockyMock._
-        // EQUIVALENT TO 1 * mockyMock._(*_)
     }
 
     def 'does stuff with something resembling a method'() {

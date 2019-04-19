@@ -8,11 +8,7 @@ import spock.lang.Specification
 class MatchingTheThingsSpec extends Specification {
 
     def mockyMock = Mock(Mockable)
-    def mockyMockWrapper
-
-    def setup() {
-        mockyMockWrapper = new MockWrapper(mockyMock)
-    }
+    def mockyMockWrapper = new MockWrapper(mockyMock)
 
     /* Matching exact things */
 

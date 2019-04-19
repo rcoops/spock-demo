@@ -43,14 +43,14 @@ class MatchingCardinalitySpec extends Specification {
     }
 
     def 'no interactions from delegate'() {
-        when: 'wrapper does something un-related to delegate'
-        mockyMockWrapper.getMock()
+        when: 'wrapper does stuff times ZERO!'
+        mockyMockWrapper.doStuffTimes(0)
 
         then: 'delegate is not called at all'
         0 * mockyMock._
     }
 
-    def 'to call or not to call'() {
+    def 'to call or not to call - kind of pointless'() {
         when: 'wrapper does stuff times 3'
         mockyMockWrapper.doStuffTimes(3)
 
@@ -58,10 +58,20 @@ class MatchingCardinalitySpec extends Specification {
         _ * mockyMock.doOtherStuff()
     }
 
-    def 'no interactions at all from anything (mocked) ever'() {
-        when: 'wrapper does something un-related to delegate'
+    def 'strict matching'() {
+        when: 'wrapper does stuff times 3'
+        mockyMockWrapper.doStuffTimes(3)
 
-        mockyMockWrapper.getMock()
+        then: 'delegate does other stuff three times'
+        3 * mockyMock.doOtherStuff()
+        and: 'nothing else happens'
+        0 * _
+    }
+
+    def 'no interactions'() {
+        when: 'wrapper does stuff times ZERO!'
+        mockyMockWrapper.doStuffTimes(0)
+
         then: 'nothing else happens'
         0 * _
     }

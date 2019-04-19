@@ -10,11 +10,7 @@ import static org.hamcrest.Matchers.greaterThan
 class MatchingArgumentSpec extends Specification {
 
     def mockyMock = Mock(Mockable)
-    def mockyMockWrapper
-
-    def setup() {
-        mockyMockWrapper = new MockWrapper(mockyMock)
-    }
+    def mockyMockWrapper = new MockWrapper(mockyMock)
 
     def "i only care how many times it's called with one arg"() {
         when: 'doing stuff with the string'

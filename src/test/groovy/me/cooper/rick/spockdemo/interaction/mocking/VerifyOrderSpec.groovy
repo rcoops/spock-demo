@@ -8,11 +8,7 @@ import spock.lang.Specification
 class VerifyOrderSpec extends Specification {
 
     def mockyMock = Mock(Mockable)
-    def mockyMockWrapper
-
-    def setup() {
-        mockyMockWrapper = new MockWrapper(mockyMock)
-    }
+    def mockyMockWrapper = new MockWrapper(mockyMock)
 
     def 'does stuff in order'() {
         when: 'doing stuff in order'

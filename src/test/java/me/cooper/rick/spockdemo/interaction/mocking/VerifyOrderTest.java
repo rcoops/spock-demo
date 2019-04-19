@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.interaction;
+package me.cooper.rick.spockdemo.interaction.mocking;
 
 import static org.mockito.Mockito.inOrder;
 

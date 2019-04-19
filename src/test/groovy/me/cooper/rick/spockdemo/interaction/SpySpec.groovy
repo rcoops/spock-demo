@@ -8,15 +8,16 @@ class SpySpec extends Specification {
 
     def calc = Spy(CrapCalc)
 
-    def "tests interactions"() {
-        given: 'some numbers'
-        def numbers = [1, 2, 3].toArray(new int[0])
-        def totalAdditions = numbers.length - 1
+    def 'tests interactions on a real thing'() {
+        given: 'an array of numbers summing 6'
+        def numbers = [1, 2, 3] as int[]
 
-        when:
-        calc.addAll(numbers)
+        when: 'adding them all'
+        def result = calc.addAll(numbers)
 
-        then:
-        totalAdditions * calc.add(_, _) >> 2
+        then: 'add is performed one less time than the size of the array'
+        (numbers.length - 1) * calc.add(_, _)
+        and: 'the result is the sum of the array'
+        result == 6
     }
 }

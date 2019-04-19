@@ -27,17 +27,17 @@ public class VerifyOrderTest {
 
   @Test
   public void testOrder() {
-    // Given: We've set up our order checker
+    // given: We've set up our order checker
     final InOrder inOrder = inOrder(mockyMock);
 
-    // When: Doing stuff in order
+    // when: Doing stuff in order
     mockyMockWrapper.doStuffInOrder();
 
-    // Then: Calls one
+    // then: Calls one
     inOrder.verify(mockyMock).one();
-    // Then: Calls two
+    // then: Calls two
     inOrder.verify(mockyMock).two();
-    // Then: Calls three
+    // then: Calls three
     inOrder.verify(mockyMock).three();
   }
 }

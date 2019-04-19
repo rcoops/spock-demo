@@ -18,8 +18,8 @@ class MatchingMethodSpec extends Specification {
         when: 'wrapper does stuff'
         mockyMockWrapper.doStuff()
 
-        then: 'it calls doStuff on the delegate'
-        1 * mockyMock.doStuff()
+        then: 'it calls doOtherStuff on the delegate'
+        1 * mockyMock.doOtherStuff()
     }
 
     def 'gets stuff with getStuff'() {

@@ -20,7 +20,7 @@ class VerifyOrderSpec extends Specification {
 
         then: 'calls one'
         1 * mockyMock.one()
-        then: 'calls two'
+        then: 'calls two' // Note 'then' rather than 'and'
         1 * mockyMock.two()
         then: 'calls three'
         1 * mockyMock.three()

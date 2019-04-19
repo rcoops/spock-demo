@@ -39,10 +39,10 @@ public class AwfulTest {
 
   @Test
   public void addAll_givenArrayOfInputs_addsThemAllUp() {
-    // When: adding x and y
+    // when: adding x and y
     int result = calc.add(firstInput, secondInput);
 
-    // Then: the answer should be as expected
+    // then: the answer should be as expected
     assertEquals(result, expectedOutput);
   }
 }

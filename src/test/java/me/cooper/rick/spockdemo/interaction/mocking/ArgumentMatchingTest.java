@@ -29,38 +29,38 @@ public class ArgumentMatchingTest {
 
   @Test
   public void doStuff_callsDoStuff_withOneArg() {
-    // When: doing stuff with the string
+    // when: doing stuff with the string
     mockyMockWrapper.doStuff("hello world!");
 
-    // Then: stuff is done
+    // then: stuff is done
     verify(mockyMock).doStuff(anyString()); // Forces you to care about the arg
   }
 
   @Test
   public void doStuffWithArgs_callsDoStuff_withThreeArgs() {
-    // When: doing stuff with the string
+    // when: doing stuff with the string
     mockyMockWrapper.doStuffWithArgs();
 
-    // Then: stuff is done with exactly three things
+    // then: stuff is done with exactly three things
     verify(mockyMock).doStuff(any(), anyInt(), any()); // Forces you to care about the arg
   }
 
   @Test
   public void doStuffWithArgs_callsDoStuff_withArgsThatFulfillConditions() {
-    // When: doing stuff with the string
+    // when: doing stuff with the string
     mockyMockWrapper.doStuffWithArgs();
 
-    // Then: stuff is done with exactly three things
+    // then: stuff is done with exactly three things
     verify(mockyMock)
         .doStuff(eq("Hello World!"), gt(2), not(eq(6.0f)));
   }
 
   @Test
   public void doStuffWithArgs_callsDoStuff_withArgsThatFulfillOtherConditions() {
-    // When: doing stuff with the string
+    // when: doing stuff with the string
     mockyMockWrapper.doStuffWithArgs();
 
-    // Then: stuff is done with exactly three things
+    // then: stuff is done with exactly three things
     verify(mockyMock)
         .doStuff(isA(String.class), and(gt(0), lt(20)), isNotNull());
   }

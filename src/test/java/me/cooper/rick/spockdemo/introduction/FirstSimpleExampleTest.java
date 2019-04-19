@@ -10,19 +10,19 @@ public class FirstSimpleExampleTest {
 
   @Test
   public void add_givenOneAndTwo_returnsThree() {
-    // Given: nothing... given nothing
+    // given: nothing... given nothing
 
-    // When: adding 1 and 2 together
+    // when: adding 1 and 2 together
     final int answer = calc.add(1, 2);
 
-    // Then: the numbers are magically added to get 3!!
+    // then: the numbers are magically added to get 3!!
     assertThat(answer).isEqualTo(3);
   }
 
   @Test
   public void add_givenOneAndTwo_expectThree() {
 
-    // Expect: 1 and 2 added together makes...3!
+    // expect: 1 and 2 added together makes...3!
     assertThat(calc.add(1, 2)).isEqualTo(3);
   }
 }

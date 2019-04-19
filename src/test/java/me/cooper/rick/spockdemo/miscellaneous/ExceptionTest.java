@@ -21,18 +21,18 @@ public class ExceptionTest {
 
   @Test(expected = NullPointerException.class)
   public void getNullFieldsField_throwsNullPointer_crapWay() {
-    // When: accessing a null field
+    // when: accessing a null field
     encapsulated.nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull();
 
-    // Then: EXPLOSION! ...?
+    // then: EXPLOSION! ...?
   }
 
   @Test
   public void getNullFieldsField_throwsNullPointer_withRule() {
-    // Expect: EXPLOSION! with detail
+    // expect: EXPLOSION! with detail
     exceptionRule.expect(NullPointerException.class);
 
-    // When: accessing a null field
+    // when: accessing a null field
     encapsulated.nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull();
 
     exceptionRule.expectMessage(isEmptyOrNullString());
@@ -41,11 +41,11 @@ public class ExceptionTest {
   @Test
   public void getNullFieldsField_throwsNullPointer_tryCatch() {
     try {
-      // When: accessing a null field
+      // when: accessing a null field
       encapsulated.nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull();
       fail("Should have thrown null pointer!");
 
-      // Then: EXPLOSION! with detail
+      // then: EXPLOSION! with detail
     } catch (final NullPointerException e) {
       assertThat(e.getMessage()).isNull();
     }
@@ -53,10 +53,10 @@ public class ExceptionTest {
 
   @Test
   public void getNullFieldsField_throwsNullPointer_assertJ() {
-    // Expect: EXPLOSION! with detail
+    // expect: EXPLOSION! with detail
     assertThatNullPointerException()
 
-        // When: accessing a null field
+        // when: accessing a null field
         .isThrownBy(() -> encapsulated.nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull())
         .withMessage(null);
   }
@@ -64,10 +64,10 @@ public class ExceptionTest {
   @Test
   public void calc_validArgs_doesNotThrowIllegalArg() {
     try {
-      // When: adding 1 and 2
+      // when: adding 1 and 2
       calc.add(1, 2);
     } catch (final IllegalArgumentException e) {
-      // Then: nothing
+      // then: nothing
       fail("Should NOT have thrown null pointer!");
     }
   }
@@ -75,10 +75,10 @@ public class ExceptionTest {
   @org.junit.jupiter.api.Test
   public void getNullFieldsField_throwsNullPointer_jUnit5() {
     final NullPointerException e = assertThrows(
-        // Expect: EXPLOSION!
+        // expect: EXPLOSION!
         NullPointerException.class,
 
-        // When: accessing a null field
+        // when: accessing a null field
         () -> encapsulated.nullField.getSuperInterestingFieldAsLongAsMyParentIsNotNull()
     );
 

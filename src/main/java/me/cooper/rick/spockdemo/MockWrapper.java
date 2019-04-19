@@ -1,6 +1,7 @@
 package me.cooper.rick.spockdemo;
 
 import static java.util.stream.IntStream.range;
+import static java.util.stream.IntStream.rangeClosed;
 
 import java.util.Random;
 
@@ -16,6 +17,10 @@ public class MockWrapper {
 
   public Mockable getMock() {
     return mock;
+  }
+
+  public void doStuffTimes(int times) {
+    range(0, times).forEach(i -> mock.doOtherStuff());
   }
 
   public void doStuff() {

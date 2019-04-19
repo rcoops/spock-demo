@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.interaction.mocking;
+package me.cooper.rick.spockdemo.interaction.mocks;
 
 import static org.mockito.AdditionalMatchers.*;
 import static org.mockito.ArgumentMatchers.*;

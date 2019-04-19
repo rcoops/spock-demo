@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.interaction.mocking
+package me.cooper.rick.spockdemo.interaction.mocks
 
 import me.cooper.rick.spockdemo.MockWrapper
 import me.cooper.rick.spockdemo.Mockable

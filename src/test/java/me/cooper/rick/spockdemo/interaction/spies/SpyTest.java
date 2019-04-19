@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.interaction;
+package me.cooper.rick.spockdemo.interaction.spies;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyInt;

@@ -1,4 +1,4 @@
-package me.cooper.rick.spockdemo.interaction
+package me.cooper.rick.spockdemo.interaction.spies
 
 import me.cooper.rick.spockdemo.CrapCalc
 import spock.lang.Specification

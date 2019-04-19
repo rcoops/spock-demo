@@ -2,10 +2,14 @@ package me.cooper.rick.spockdemo.interaction.mocks
 
 import me.cooper.rick.spockdemo.MockWrapper
 import me.cooper.rick.spockdemo.Mockable
+import spock.lang.PendingFeature
 import spock.lang.Specification
 
 @SuppressWarnings("all")
 class MatchingTheThingsSpec extends Specification {
+
+    // This sort of wild-carding is useful for strict(er) interaction testing
+    // i.e. it's ok to call something here, but not ok to call anything else: 0 * _
 
     def mockyMock = Mock(Mockable)
     def mockyMockWrapper = new MockWrapper(mockyMock)

@@ -24,7 +24,6 @@ public class MockWrapper {
   }
 
   public void doStuff() {
-    //    mock.doStuff();
     mock.doOtherStuff();
   }
 

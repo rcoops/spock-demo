@@ -4,8 +4,6 @@ import static java.util.Arrays.stream;
 
 public class CrapCalc {
 
-  private final String definitelyPrivateField = "ha! you'll never see me cos: encapsulation right?";
-
   public CrapCalc() {
   }
 
@@ -20,4 +18,8 @@ public class CrapCalc {
   public int square(final int number) {
     return number * number;
   }
+
+//  public int cube(final int number) {
+//    return square(number) * number;
+//  }
 }

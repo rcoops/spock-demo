@@ -20,4 +20,6 @@ class SpySpec extends Specification {
         and: 'the result is the sum of the array'
         result == 6
     }
+
+    // TODO - mention partial mocking (spies can be used to stub some but not all behaviour)
 }

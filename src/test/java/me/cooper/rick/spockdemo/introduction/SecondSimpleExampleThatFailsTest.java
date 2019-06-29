@@ -1,6 +1,7 @@
 package me.cooper.rick.spockdemo.introduction;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 import static me.cooper.rick.spockdemo.Fixtures.calc;
 
@@ -11,9 +12,9 @@ import org.junit.Test;
 public class SecondSimpleExampleThatFailsTest {
 
   @Test
-  public void add_givenOneAndTwo_returnsFour() {
-    // expect: adding 1 and 2 makes ...4?!!
-    assertThat(calc.add(1, 2)).isEqualTo(4);
+  public void add_givenOneAndOne_returnsThree() {
+    // expect: adding 1 and 1 makes ...3?!!
+    assertThat(calc.add(1, 1)).isEqualTo(3);
   }
 
   @Test

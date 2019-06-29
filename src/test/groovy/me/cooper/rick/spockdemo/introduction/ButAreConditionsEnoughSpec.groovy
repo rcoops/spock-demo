@@ -25,8 +25,24 @@ class ButAreConditionsEnoughSpec extends Specification {
         ![]
     }
 
+    def 'and map'() {
+        expect:
+        ![:]
+    }
+
     def 'empty string is false'() {
         expect:
         !""
+    }
+
+    def 'empty gstring is false'() {
+        def gstring = ""
+        expect:
+        !"$gstring"
+    }
+
+    def 'failed matcher is false'() {
+        expect:
+        !(a =~ /b/)
     }
 }

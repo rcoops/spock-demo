@@ -16,6 +16,7 @@ public class CrapCalc {
   }
 
   public int square(final int number) {
+    // return 1
     return number * number;
   }
 

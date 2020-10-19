@@ -11,14 +11,12 @@ public class AbsolutelyNoMathematicalAbilityTest {
 
   // 100% code coverage!! YAY!
   @Test
-  public void square_givenANumber_returnsOne() {
-    assertThat(calc.square(1)).isEqualTo(1);
+  public void square_givenANumber_returnsItsSquare() {
+    assertThat(calc.square(10)).isEqualTo(100);
   }
 
   @Test
-  @Ignore("unless you want to fail")
-  public void square_givenAnotherNumber_returnsOne() {
-    assertThat(calc.square(10)).isEqualTo(1);
+  public void square_givenAnotherNumber_returnsItsSquare() {
+    assertThat(calc.square(5)).isEqualTo(100);
   }
-
 }

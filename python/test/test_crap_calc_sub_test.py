@@ -14,7 +14,9 @@ class TestCrapCalc(unittest.TestCase):
     def test__add_all__given_array_of_inputs__adds_them_all_up(self):
         for i, (a, b, result) in enumerate(self.params):
             with self.subTest(f"{a} + {b} = {result}", i=i):
-                self.assertEqual(CrapCalc.add(a, b), result)
+                self.assertEqual(CrapCalc.add_all(a, b), result)
 
-    def test__add_given_1_and_1__gives_2(self):
-        self.assertEqual(CrapCalc.add(1, 1), 2)
+    def test__add_given_inputs__adds_them(self):
+        for i, (a, b, result) in enumerate(self.params):
+            with self.subTest(f"{a} + {b} = {result}", i=i):
+                self.assertEqual(CrapCalc.add(a, b), result)

@@ -20,7 +20,7 @@ public class AwfulTest {
   public static Collection<Object[]> params() {
       return asList(
           new Object[][]{
-              {1, 1, 2},
+              {1, 1, 3},
               {2, 2, 4},
               {3, 3, 6}
           }

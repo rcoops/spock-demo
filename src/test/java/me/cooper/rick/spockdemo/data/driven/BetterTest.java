@@ -62,7 +62,7 @@ public class BetterTest {
   private static Stream<Arguments> params() {
     return Stream.of(
         //@formatter:off
-        arguments(1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  10),
+        arguments(1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  11),
         arguments(2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  20),
         arguments(3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  30),
         arguments(4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  40),
@@ -82,7 +82,7 @@ public class BetterTest {
 
   @Test
   @Parameters({
-      "1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  10",
+      "1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  11",
       "2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  20",
       "3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  30",
       "4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  40",
@@ -94,8 +94,7 @@ public class BetterTest {
       "10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 100"
   })
   public void addAll_givenArrayOfInputs_addsThemAllUpParams(int x, int y, int z, int a, int b, int c, int d, int e,
-      int f,
-      int g, int expectedOutput) {
+      int f, int g, int expectedOutput) {
     assertEquals(calc.addAll(x, y, z, a, b, c, d, e, f, g), expectedOutput);
   }
 

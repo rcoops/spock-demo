@@ -1,0 +1,19 @@
+{
+  "name": "crap-calc-pipeline",
+  "version": "0.0.0",
+  "bin": {
+    "cicd": "bin/main.js"
+  },
+  "scripts": {
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/node": "10.17.5",
+    "aws-cdk": "1.30.0",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.7.2",
+    "@aws-cdk/core": "1.30.0",
+    "@upside/cicd-pipelines": "0.0.2",
+    "source-map-support": "^0.5.16"
+  }
+}

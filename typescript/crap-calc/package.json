@@ -1,0 +1,31 @@
+{
+  "name": "@upside/crap-calc",
+  "version": "0.0.0",
+  "description": "My new library",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "npm run lint-ci -- --fix",
+    "lint-ci": "tsc --noEmit && eslint '{src,__tests__}/**/*.ts'",
+    "test": "jest --coverage",
+    "publish-patch": "aws codebuild start-build --project-name spock-demo-crap-calc-publish --environment-variables-override name=RELEASE_TYPE,value=patch --profile upside-build-admin",
+    "publish-minor": "aws codebuild start-build --project-name spock-demo-crap-calc-publish --environment-variables-override name=RELEASE_TYPE,value=minor --profile upside-build-admin",
+    "publish-major": "aws codebuild start-build --project-name spock-demo-crap-calc-publish --environment-variables-override name=RELEASE_TYPE,value=major --profile upside-build-admin"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@types/jest": "^25.1.3",
+    "@types/node": "^12.12.6",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-config-airbnb-typescript": "^7.2.0",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.7.2"
+  }
+}

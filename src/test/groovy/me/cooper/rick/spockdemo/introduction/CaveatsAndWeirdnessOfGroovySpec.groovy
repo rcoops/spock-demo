@@ -1,6 +1,8 @@
 package me.cooper.rick.spockdemo.introduction
 
 import me.cooper.rick.spockdemo.Encapsulated
+import me.cooper.rick.spockdemo.MockWrapper
+import me.cooper.rick.spockdemo.Mockable
 import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Stepwise
@@ -13,6 +15,9 @@ import static me.cooper.rick.spockdemo.Fixtures.encapsulated
 @Stepwise
 @SuppressWarnings("all")
 class CaveatsAndWeirdnessOfGroovySpec extends Specification {
+
+    def mockyMock = Mock(Mockable)
+    def mockyMockWrapper = new MockWrapper(mockyMock)
 
     def """This test name is so long that it actually needs multiple lines to describe what's going on. In fact come to
 think of it this name is probably going on for a bit longer than needed and in my humble opinion this sort of thing
@@ -104,5 +109,27 @@ should be kept to a minimum unless completely necessary."""() {
         if (true) {
             assert true
         }
+    }
+
+    @Ignore('unless you want to fail')
+    def "this no worky"() {
+        given: 'mockmock is stubbed'
+        mockyMock.getStuff() >> "stuff"
+
+        when: 'getting stuff'
+        def stuff = mockyMockWrapper.getStuff()
+
+        then: 'stuff is got'
+        1 * mockyMock.getStuff()
+        stuff == "stuff"
+    }
+
+    def "this works"() {
+        when: 'getting stuff'
+        def stuff = mockyMockWrapper.getStuff()
+
+        then: 'stuff is got'
+        1 * mockyMock.getStuff() >> "stuff"
+        stuff == "stuff"
     }
 }

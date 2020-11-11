@@ -1,7 +1,6 @@
 package me.cooper.rick.spockdemo;
 
 import static java.util.stream.IntStream.range;
-import static java.util.stream.IntStream.rangeClosed;
 
 import java.util.Random;
 
@@ -19,7 +18,7 @@ public class MockWrapper {
     return mock;
   }
 
-  public void doStuffTimes(int times) {
+  public void doStuffTimes(final int times) {
     range(0, times).forEach(i -> mock.doOtherStuff());
   }
 
@@ -40,8 +39,7 @@ public class MockWrapper {
   }
 
   public void ensureNoBiggerThanTen(final int anyInt) {
-    final int checked = anyInt > 10 ? 10 : anyInt;
-    mock.doStuffWithMaxSizeInt(checked);
+    mock.doStuffWithMaxSizeInt(Math.min(anyInt, 10));
   }
 
   public void doStuffRandomTimes() {

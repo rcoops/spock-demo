@@ -1,6 +1,6 @@
 package me.cooper.rick.spockdemo.data.driven
 
-import spock.lang.Ignore
+
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -8,7 +8,7 @@ import static me.cooper.rick.spockdemo.Fixtures.calc
 
 class BetterSpec extends Specification {
 
-    @Ignore('unless you want to fail')
+//    @Ignore('unless you want to fail')
     def 'this is DEFINITELY better for lots of test cases'() {
         when: 'adding x and y'
         def answer = calc.addAll x, y, z, a, b, c, d, e, f, g
